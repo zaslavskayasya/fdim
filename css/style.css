@@ -1,0 +1,1046 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+  padding: 0px;
+}
+
+body{
+  margin: 0px;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+.container{
+  max-width: 1410px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+.two-part{
+  display: flex;
+  justify-content: space-between;
+}
+
+.part-item{
+  width: 45%;
+}
+.three-part{
+  display: flex;
+  justify-content: space-between;
+}
+
+.three-item {
+  width: 30%;
+}
+
+.header{
+  display: flex;
+  padding: 10px 0px ;
+}
+
+.logo{
+  width: 140px;
+  height: 114px;
+  margin-left: 178px;
+  margin-top: 50px;
+}
+
+.menu-trigger{
+  background-color: #fff;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 30px;  
+}
+
+.menu-trigger img{
+  width: 34px;
+  height: 24px;
+  cursor: pointer;
+}
+
+
+.main-contact-block{
+  list-style: none;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-contact-block .contact-item{
+  margin-bottom: 75px;
+}
+
+
+.h1 {
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transform: rotate(180deg);
+  position: absolute;
+  writing-mode: vertical-lr;
+  right: 300px;
+  bottom: 80px;
+  color: #fff;
+  font-size: 178px;
+  text-transform: uppercase;
+  line-height: 85%;
+}
+
+.h1 span{
+  display: block;
+  font-size: 94px;
+}
+
+.main-screen{
+  background-image: url(../img/main-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  min-height: 920px;
+  margin-bottom: 136px;
+}
+
+.layout{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  /* background-color: rgba(250, 250, 250 , 0.3); */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: all ease 0.7s;
+}
+
+.layout.active{
+  background-color: rgba(250, 250, 250 , 0.3);
+}
+
+/* The side navigation menu */
+.sidenav, .phones-sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  right: 0;
+  background-color: #fff; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+ /* Place content 60px from the top */
+  transition: 0.3s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav.open{
+  width: 830px;
+}
+
+.phones-sidenav.open{
+  width: 100%;
+}
+
+
+/* The navigation menu links */
+.sidenav a {
+  /* padding: 8px 8px 8px 32px; */
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+
+  transition: all ease 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #89744F;
+ 
+
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebutton ,  .phones-sidenav .close-phones{
+  position: absolute;
+  top: 0;
+  right: 0px;
+  font-size: 36px;
+  margin-left: 50px;
+  padding: 20px 30px;
+}
+.sidenav .closebutton img, .phones-sidenav .close-phones img{
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+
+.menu{
+  list-style: none;
+  padding-top: 140px;
+  margin: 0 auto;  
+  padding-left: 0px;
+  margin-bottom: 60px;
+}
+
+.menu-link{
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+  font-size: 27px;
+}
+
+.line{
+  background-color: #F8F2E9;
+  padding: 39px 0;
+  margin-bottom: 60px;
+}
+
+.socials{
+    display: flex;
+    justify-content: space-between;
+    max-width: 180px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.menu-soc-img{
+    max-width: 25px;
+    cursor: pointer;
+  }
+  
+  .phones-section{
+    list-style: none;
+    padding-left: 0px;
+}
+
+.phone-item{
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #000;
+  text-align: center;
+}
+
+.phones-sidenav{
+  display: flex;
+  align-items: center;
+}
+
+.phones-block{
+  width: 600px ;
+  margin: 0 auto;
+}
+.big-phones{
+  font-size: 64px;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 75px;
+  text-align: center;
+  text-decoration: none;
+  transition: all ease 0.3s;
+  display: block;
+
+}
+.big-phones:hover{
+  color: #89744F;
+}
+
+
+.about-section .about-img-wrap{
+    max-width: 555px;
+    position: relative;
+    margin-bottom: 119px;
+}
+
+.about-section .about-img-wrap .render{
+    width: 100%;
+}
+
+.about-section .about-img-wrap .uk_fr_flags{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 232px;
+
+}
+
+.about-section .two-part{
+    /* margin-bottom: 104px; */
+}
+
+.about-section .wrap-texts .h2{
+  color: #89744F;
+  font-size: 36px;
+  margin-bottom: 74px;
+  font-family: "Libre Bodoni", serif; 
+  position: relative;
+   
+}
+
+.about-section .wrap-texts .h2:before{
+  content: "";
+  background-image: url(../img/decor3.png);
+  width: 77px ;
+  height: 58px;
+  background-size: cover;
+  position: absolute;
+  left: -100px;
+  top: -5px;
+}
+.about-section .accent-text{
+  max-width: 579px;
+  line-height: 200%;
+  font-size: 24px;
+  font-weight: 500;
+  color: #000;
+
+}
+.about-section .three-part{
+  margin-bottom: 119px;
+  
+}
+
+.item-decors{
+  display: flex;
+  align-items: baseline;
+}
+
+.norm-text{
+    margin: 0px;
+    font-size: 18px;
+    line-height: 200%;
+    font-weight: 400;
+    color: #000;
+}
+.deco-img{
+  width: 20px;
+  height: 17px;
+  margin-right: 26px;
+}
+
+
+.parallax-block {
+  /* The image used */
+  background-image: url(../img/parallax.jpg);
+
+  /* Set a specific height */
+  min-height: 480px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 98px;
+}
+
+.ecsclisice-parallax{
+  background-image: url(../img/large-parallax.jpg);
+
+  /* Set a specific height */
+  min-height: 480px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 98px;
+
+}
+
+
+.h2-center{
+  font-size: 36px;
+  color: #89744F;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  margin-bottom: 114px;
+}
+
+.h2-center:after{
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-image: url(../img/uk_flag.svg);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.quality-section{
+    margin-bottom: 126px ;
+}
+.quality-header{
+  font-weight: 500;
+  color: #89744F;
+  font-size: 22px;
+  margin-bottom: 23px;
+  margin: 0px 0px 23px 0px;
+
+}
+
+.item-icons{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.quality-section .icon-img  {
+  width: 69px;
+  height: 69px;  
+  margin-right: 25px;
+}
+.quality-section{
+  
+}
+.quality-section{
+  
+}
+.quality-section{
+  
+}
+.quality-section{
+  
+}
+
+.not-parallax-section{
+  background-image: url(../img/2-pics.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  margin-bottom: 75px;
+
+}
+
+.list-of_pluses{
+  list-style: none;
+  padding-left: 0px;
+
+}
+.list-of_pluses li{
+  background-image: url(../img/decor1.png);
+  background-repeat: no-repeat;
+  background-position: 0px 10px;
+  background-size: 20px;
+  margin-bottom: 25px;
+}
+
+.list-of_pluses p{
+  padding-left: 35px
+}
+.norm-text span.bold{
+  font-weight: 600;
+}
+
+.quality-second{
+  margin-bottom: 97px;
+}
+
+.only-mob{
+  display: none;
+}
+.mob-image{
+  width: 100%;
+  margin-bottom: 70px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: flex-start;
+  width: 80% ;
+  padding-left: 50px
+}
+
+.tablinks{
+  text-align: left;
+  min-width: 33%;
+  opacity: 0.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+.numero{
+  font-size: 16px;
+
+}
+.tab-name{
+  font-size: 25px;
+  position: relative;
+  margin: 0px;
+}
+
+.tab-name:after{
+  content: "";
+  background-image: url('../img/arrow.svg');
+  width: 17px;
+  height: 7px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 100px;
+  top:15px
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab .tablinks:hover {
+  color: #000;
+  opacity: 1;
+}
+
+/* Create an active/current tablink class */
+.tab .tablinks.active {
+  color: #000;
+  opacity: 1;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  animation: fadeEffect 1s;
+}
+
+.wrap-illustrate{
+  max-width: 670px;
+}
+.wrap-illustrate img{
+  width: 100%;
+}
+
+
+.tabs-section{
+  margin-top: -200px;
+}
+
+.tab-content-wrap{
+  padding-top: 150px;
+}
+
+.tabcontent{
+  display: flex;
+}
+.content-tab{
+  display: flex;
+}
+
+.tab-content-wrap .h2{
+  font-size: 30px;
+  margin-bottom: 63px ;
+  color: #89744F;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+@media screen and (max-width: 1800px){
+  .h1 {
+    right: 6%;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .quality-section{
+    margin-bottom: 50px;
+  }
+  .quality-section .three-part{
+    flex-direction: column;
+  }
+  .quality-section .three-part .three-item{
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
+  .not-parallax-section{
+    display: none;
+  }
+  .only-mob{
+    display: block;
+  }
+  .mob-image{
+    margin-bottom: 60px;
+  }
+}
+
+
+@media screen and (max-width: 1024px){
+    .about-section .two-part{
+      flex-direction: column-reverse;
+      margin: 0 auto 54px;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .about-section .part-item {
+      width: 90%;
+      margin: 0 auto;
+      align-items: center;
+      display: flex;
+  }
+    .about-section .wrap-texts .h2 {
+      margin-left: 88px;
+      margin-bottom: 34px;
+    }
+    .about-section .wrap-texts{
+      margin: 0 auto 30px;
+    }
+    .about-section .about-img-wrap{
+      margin: 0 auto 30px;
+    }
+    .about-section{
+
+    }
+    .parallax-block{
+      min-height: 298px ;
+      background-position: 90%;
+    }
+    .quality-section .three-part .three-item {
+      width: 100%;
+    }
+
+    .quality-second .three-part{
+      flex-direction: column;
+    }
+    .quality-second .three-item {
+      width: 600px;
+      margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 960px){
+  .sidenav.open {
+    width: 600px;
+  }
+  .h1{
+    font-size: 150px;
+  }
+  .h1 span{
+    font-size: 70px;
+  }
+  .logo {
+    width: 117px;
+    height: 63px;
+    margin-left: 97px;
+    margin-top: 30px;
+    margin-bottom: 56px;
+  }
+  .logo img{
+    width: 100%;
+  }
+  .main-screen{    
+    min-height: 100vh;
+  }
+  .main-screen{
+    margin-bottom: 88px;    
+  }
+  .about-section .wrap-texts .h2 {
+    margin-left: 72px;
+    margin-bottom: 32px;
+    font-size: 28px;
+  }
+  .about-section .wrap-texts .h2:before { 
+    width: 50px;
+    height: 42px;   
+    left: -77px;
+    top: -1px;
+  }
+  .about-section .accent-text{
+    font-size: 18px;
+  }
+  .about-section .about-img-wrap .uk_fr_flags{
+    left: 0px;
+    right: auto;
+    width: 137px;
+    height: 42px;
+    bottom: -1px
+  }
+  .about-section .three-part {
+    margin-bottom: 119px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .about-section .three-item {
+    width: 400px;
+    margin-bottom: 35px;
+  }
+  .quality-second .three-item {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .list-of_pluses{
+    margin-bottom: 0px;
+  }
+
+  .norm-text{
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (max-width: 760px){
+  .h1 {
+    font-size: 98px;
+  }
+  .sidenav.open {
+    width: 100%;
+  }
+  .sidenav a{
+    font-size: 16px;
+    margin-bottom: 20px ;
+  }
+  .menu {
+    padding-top: 80px;
+  }
+  .sidenav .closebutton img {
+    width: 23px;
+    height: 23px;
+  }
+  .logo {
+    width: 90px;
+    height: 73px;
+    margin-left: 28px;
+    margin-top: 37px;
+    margin-bottom: 20px;
+  }
+  .h1 span {
+    font-size: 40px;
+  }
+  .contact-item {
+    margin-bottom: 48px;
+  }
+  .contact-item a {
+    display: block;
+    /* width: 35px; */
+    max-width: 35px;
+    height: 20px;
+
+  }
+  .contact-item a img {
+    width: 100%;
+  }
+
+ .big-phones {
+    font-size: 39px;   
+    margin-bottom: 28px;
+ }
+ .about-section .three-item {
+  width: 300px;
+  margin-bottom: 35px;
+  }
+  .mob-image {
+    margin-bottom: 30px;
+  }
+  .list-of_pluses{
+    margin-top: 0px;
+  }
+  .list-of_pluses li{
+    margin-bottom: 10px;
+  }
+
+}
+
+
+@media screen and (max-width: 390px){
+  .big-phones {
+    font-size: 24px;   
+    margin-bottom: 20px;
+ }
+ .about-section .three-item {
+  width: 280px;
+  margin-bottom: 30px;
+  }
+  .deco-img {
+
+    margin-right: 14px;
+  }
+  .about-section .wrap-texts .h2 {
+    margin-left: 72px;
+    margin-bottom: 32px;
+    font-size: 22px;
+  }
+  .about-section .wrap-texts .h2:before {
+    width: 40px;
+    height: 32px;
+    left: -75px;
+    top: -1px;
+  }
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
