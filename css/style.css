@@ -812,7 +812,20 @@ textarea {
   }
 }
 
+
+@media screen and (max-width: 1400px){
+  .tab-name{
+    font-size: 22px;
+    max-width: 228px;
+  }
+  .tab-name:after {
+    right: 25px;
+    top: 12px;
+}
+}
+
 @media screen and (max-width: 1200px){
+
   .quality-section{
     margin-bottom: 50px;
   }
@@ -833,6 +846,9 @@ textarea {
   .mob-image{
     margin-bottom: 60px;
   }
+  .tab-content-wrap {
+    padding-top: 80px;
+  }
 }
 
 
@@ -849,7 +865,7 @@ textarea {
       margin: 0 auto;
       align-items: center;
       display: flex;
-  }
+    }
     .about-section .wrap-texts .h2 {
       margin-left: 88px;
       margin-bottom: 34px;
@@ -877,7 +893,34 @@ textarea {
     .quality-second .three-item {
       width: 600px;
       margin: 0 auto;
-  }
+    }
+    .tabs-section .two-part{
+      flex-direction: column;
+    }
+    .tabs-section .part-item {
+      width: 100%;
+      margin: 0 auto;
+    }
+    .tabs-section .wrap-illustrate{
+      order: 2;
+    }
+
+    .tabs-section .texts-part .h2 {
+      font-size: 30px;
+      margin-bottom: 33px;
+      margin-top: 0px;
+    }
+
+    .tabs-section .list-of_pluses{
+      margin-bottom: 40px;
+    }
+
+    .tabs-section .norm-text{
+      margin-bottom: 30px;
+    }
+    
+    .tabs-section{};
+
 }
 
 @media screen and (max-width: 960px){
@@ -947,12 +990,25 @@ textarea {
   .norm-text{
     font-size: 16px;
   }
+  .tab{
+    flex-direction: column;
+    padding-left: 15px;;
+  }
+  .tab-name {
+    font-size: 22px;
+    max-width: 300px;
+  }
+
 }
 
 
 @media screen and (max-width: 760px){
   .h1 {
     font-size: 98px;
+  }
+  .tabs-section .texts-part .h2 {
+    font-size: 26px;
+
   }
   .sidenav.open {
     width: 100%;
@@ -1009,7 +1065,21 @@ textarea {
   .list-of_pluses li{
     margin-bottom: 10px;
   }
-
+  .tabs-section {
+    margin-top: -316px;
+  }
+  .numero{
+    font-size: 10px;
+  }
+  .tab-name {
+    font-size: 17px;
+  }
+  .tab button {
+    padding: 5px 15px 16px;
+  }
+  .tabs-section .norm-text{
+    margin-bottom: 23px;
+  }
 }
 
 
@@ -1037,6 +1107,14 @@ textarea {
     left: -75px;
     top: -1px;
   }
+  .tab-name:after {
+    right: 25px;
+    top: 8px;
+  }
+  .tab-name {
+    font-size: 15px;
+  }
+
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
