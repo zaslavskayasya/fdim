@@ -51,3 +51,27 @@ document.addEventListener("DOMContentLoaded", function() {
   // Відкрити першу вкладку за замовчуванням
   tablinks[0].click();
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const tablinks = document.querySelectorAll(".tablinks2");
+  const tabcontents = document.querySelectorAll(".tabcontent2");
+
+  function openCity(cityName) {
+    tabcontents.forEach(content => content.style.display = "none");
+    tablinks.forEach(link => link.classList.remove("active"));
+    
+    document.getElementById(cityName).style.display = "block";
+  }
+
+  tablinks.forEach(button => {
+    button.addEventListener("click", function() {
+      const cityName = this.getAttribute("data-tab");
+      openCity(cityName);
+      this.classList.add("active");
+    });
+  });
+
+  // Відкрити першу вкладку за замовчуванням
+  tablinks[0].click();
+});

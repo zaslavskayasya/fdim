@@ -577,21 +577,18 @@ textarea {
   margin-bottom: 98px;
 }
 
-.ecsclisice-parallax{
+.ecsclisice-parallax, .ecsclisice-parallax2{
   background-image: url(../img/large-parallax.jpg);
-
-  /* Set a specific height */
   min-height: 480px;
-
-  /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 98px;
-
 }
-
+.ecsclisice-parallax2{
+  background-image: url(../img/paralax2.jpg);
+}
 
 .h2-center{
   font-size: 36px;
@@ -701,7 +698,7 @@ textarea {
   padding-left: 50px
 }
 
-.tablinks{
+.tablinks, .tablinks2{
   text-align: left;
   min-width: 33%;
   opacity: 0.6;
@@ -710,6 +707,7 @@ textarea {
 
 .numero{
   font-size: 16px;
+  margin-top: 5px;
 
 }
 .tab-name{
@@ -742,13 +740,13 @@ textarea {
 }
 
 /* Change background color of buttons on hover */
-.tab .tablinks:hover {
+.tab .tablinks:hover , .tab .tablinks2:hover{
   color: #000;
   opacity: 1;
 }
 
 /* Create an active/current tablink class */
-.tab .tablinks.active {
+.tab .tablinks.active, .tab .tablinks2.active  {
   color: #000;
   opacity: 1;
 }
@@ -791,7 +789,12 @@ textarea {
   text-transform: uppercase;
   
 }
-
+.design-tab {
+  align-items: center;
+}
+.wrap-design img{
+  float: right;
+}
 
 
 /* Fade in tabs */
@@ -842,10 +845,11 @@ textarea {
   transition: all ease 0.3s;;
 }
 
-
-.parking{
+.wrap-all-nomero .lightboxed{
   width: 50px;
   height: 50px;
+}
+.parking{
   position: absolute;
   bottom: 20%;
   left: 10%;
@@ -856,8 +860,7 @@ textarea {
 }
 
 .section1{
-  width: 50px;
-  height: 50px;
+
   position: absolute;
   bottom: 23%;
   left: 35%;
@@ -874,8 +877,7 @@ textarea {
 }
 
 .section2{
-  width: 50px;
-  height: 50px;
+
   position: absolute;
   bottom: 33%;
   left: 65%;
@@ -891,8 +893,7 @@ textarea {
 
 
 .section3{
-  width: 50px;
-  height: 50px;
+
   position: absolute;
   bottom: 40%;
   left: 85%;
@@ -1019,7 +1020,10 @@ textarea {
       margin-bottom: 30px;
     }
     
-    .tabs-section{};
+    .wrap-all-nomero {
+      max-width: 100%;
+      height: 583px;
+    }
 
 }
 
@@ -1097,6 +1101,13 @@ textarea {
   .tab-name {
     font-size: 22px;
     max-width: 300px;
+  }
+  .h2-center {
+    font-size: 23px;
+    margin-bottom: 50px;
+  }
+  .numero-section {
+    padding-top: 50px;
   }
 
 }
@@ -1180,6 +1191,14 @@ textarea {
   .tabs-section .norm-text{
     margin-bottom: 23px;
   }
+  .wrap-all-nomero {
+    max-width: 100%;
+    height: 304px;
+  }
+  .wrap-all-nomero .lightboxed{
+    width: 35px;
+    height: 35px;
+  }
 }
 
 
@@ -1213,6 +1232,10 @@ textarea {
   }
   .tab-name {
     font-size: 15px;
+  }
+  .wrap-all-nomero {
+    max-width: 100%;
+    height: 250px;
   }
 
 }
