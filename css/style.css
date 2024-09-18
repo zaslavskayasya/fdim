@@ -789,6 +789,7 @@ textarea {
   color: #89744F;
   font-weight: 400;
   text-transform: uppercase;
+  
 }
 
 
@@ -804,6 +805,37 @@ textarea {
   to {opacity: 1;}
 }
 
+
+.wrap-all-nomero{
+  position: relative;
+}
+
+.wrap-all-nomero{
+  max-width: 100%;
+  height: 683px ;
+  background-image: url(../img/numero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: relative;
+}
+
+
+.parking{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 30%;
+  left: 10%;
+  cursor: pointer;
+  background-image: url(../img/P.svg);
+  background-size: cover;
+  
+}
+
+.wrap-all-nomero:hover .parking:hover ~ .wrap-all-nomero {
+  background-image: url(../img/render-min-section1.jpg);
+}
 
 
 @media screen and (max-width: 1800px){
