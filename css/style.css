@@ -21,6 +21,7 @@ html {
 body{
   margin: 0px;
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
 }
 
 /*
@@ -695,7 +696,24 @@ textarea {
   /* flex-direction: column; */
   justify-content: flex-start;
   width: 80% ;
-  padding-left: 50px
+  padding-left: 50px;
+  padding-top: 12px;
+}
+
+.tab.tab2{
+  width: 60%;
+}
+
+.tab.tab2 .tab-name:after {
+  content: "";
+  background-image: url(../img/arrow.svg);
+  width: 17px;
+  height: 7px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 77px;
+  top: 14px;
 }
 
 .tablinks, .tablinks2{
@@ -772,6 +790,7 @@ textarea {
 
 .tab-content-wrap{
   padding-top: 150px;
+  margin-bottom: 100px;
 }
 
 .tabcontent{
@@ -792,10 +811,19 @@ textarea {
 .design-tab {
   align-items: center;
 }
+.wrap-design{
+  max-width: 700px;
+  position: relative;
+}
 .wrap-design img{
   float: right;
+  width: 100%;
 }
 
+.tabcontent2 .wrap-illustrate .roomimg{
+  width: 800px;
+  margin-left: 50px;
+}
 
 /* Fade in tabs */
 @-webkit-keyframes fadeEffect {
@@ -825,7 +853,8 @@ textarea {
 }
 
 .numero-section{
-  padding-top: 100px;
+  padding-top: 50px;
+  margin-bottom: 150px;
 }
 
 .wrap-all-nomero .parking:hover{
@@ -907,9 +936,19 @@ textarea {
   background-image: url(../img/render-min-section3.jpg);
 }
 
+
+.three-section{
+  margin-bottom: 100px;;
+}
+
+
+
 @media screen and (max-width: 1800px){
   .h1 {
     right: 6%;
+  }
+  .h1 {
+    font-size: 120px;
   }
 }
 
@@ -922,7 +961,14 @@ textarea {
   .tab-name:after {
     right: 25px;
     top: 12px;
-}
+  }
+  .tabcontent2 .wrap-illustrate .roomimg {
+    width: 600px;
+  }
+  .wrap-design {
+    max-width: 500px;
+  }
+
 }
 
 @media screen and (max-width: 1200px){
@@ -938,18 +984,21 @@ textarea {
     margin: 0 auto;
     margin-bottom: 35px;
   }
-  .not-parallax-section{
-    display: none;
-  }
-  .only-mob{
-    display: block;
-  }
+
   .mob-image{
     margin-bottom: 60px;
   }
   .tab-content-wrap {
     padding-top: 80px;
+    margin-bottom: 20px;
   }
+  .numero-section{
+    margin-bottom: 70px;
+  }
+  .tabs-section {
+    margin-top: -343px;
+  }
+
 }
 
 
@@ -1003,7 +1052,7 @@ textarea {
       margin: 0 auto;
     }
     .tabs-section .wrap-illustrate{
-      order: 2;
+      order: 1;
     }
 
     .tabs-section .texts-part .h2 {
@@ -1019,10 +1068,27 @@ textarea {
     .tabs-section .norm-text{
       margin-bottom: 30px;
     }
-    
+    .tabs-section .tabcontent2 .design-tab .wrap-illustrate{
+      order: 0;
+      margin-bottom: 40px;
+      width: 100%;
+    }
+    .tabcontent2 .wrap-illustrate .roomimg {
+      width: 100%;
+      margin-left: 0px;;
+    }
     .wrap-all-nomero {
       max-width: 100%;
       height: 583px;
+    }
+    .not-parallax-section{
+      display: none;
+    }
+    .only-mob{
+      display: block;
+    }
+    .tabs-section{
+      margin-bottom: 50px;;
     }
 
 }
@@ -1032,10 +1098,10 @@ textarea {
     width: 600px;
   }
   .h1{
-    font-size: 150px;
+    font-size: 120px;
   }
   .h1 span{
-    font-size: 70px;
+    font-size: 60px;
   }
   .logo {
     width: 117px;
