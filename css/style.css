@@ -818,6 +818,28 @@ textarea {
   background-position: center;
   background-repeat: no-repeat;
   background-position: relative;
+  transition: all ease 0.3s;;
+}
+
+.numero-section{
+  padding-top: 100px;
+}
+
+.wrap-all-nomero .parking:hover{
+    transform: translateY(-10px);
+    transition: all ease 0.3s;;
+}
+.wrap-all-nomero .section1:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;;
+}
+.wrap-all-nomero .section2:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;;
+}
+.wrap-all-nomero .section3:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;;
 }
 
 
@@ -825,18 +847,64 @@ textarea {
   width: 50px;
   height: 50px;
   position: absolute;
-  bottom: 30%;
+  bottom: 20%;
   left: 10%;
   cursor: pointer;
   background-image: url(../img/P.svg);
-  background-size: cover;
-  
+  background-size: cover; 
+  transition: all ease 0.3s; 
 }
 
-.wrap-all-nomero:hover .parking:hover ~ .wrap-all-nomero {
+.section1{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 23%;
+  left: 35%;
+  cursor: pointer;
+  background-image: url(../img/sec1.svg);
+  background-size: cover;  
+  transition: all ease 0.3s; 
+}
+
+
+
+.wrap-all-nomero:has(.section1:hover) {
   background-image: url(../img/render-min-section1.jpg);
 }
 
+.section2{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 33%;
+  left: 65%;
+  cursor: pointer;
+  background-image: url(../img/sec2.svg);
+  background-size: cover;  
+  transition: all ease 0.3s;
+}
+
+.wrap-all-nomero:has(.section2:hover) {
+  background-image: url(../img/render-min-section2.jpg);
+}
+
+
+.section3{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 40%;
+  left: 85%;
+  cursor: pointer;
+  background-image: url(../img/sec3.svg);
+  background-size: cover;  
+  transition: all ease 0.3s;
+}
+
+.wrap-all-nomero:has(.section3:hover) {
+  background-image: url(../img/render-min-section3.jpg);
+}
 
 @media screen and (max-width: 1800px){
   .h1 {
