@@ -17,12 +17,16 @@ html {
   line-height: 1.4;
   padding: 0px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body{
   margin: 0px;
   font-family: "Montserrat", sans-serif;
   /* overflow-x: hidden; */
+}
+body.body-no-scroll {
+  overflow: hidden;
 }
 
 /*
@@ -289,10 +293,11 @@ textarea {
 
 .menu-trigger{
   background-color: #fff;
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 0px;
   padding: 30px;  
+  z-index: 999;
 }
 
 .menu-trigger img{
@@ -367,6 +372,7 @@ textarea {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   right: 0;
+  z-index: 999999;
   background-color: #fff; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
  /* Place content 60px from the top */
@@ -1132,6 +1138,7 @@ input {
   font-weight: normal;
   line-height: 200%;
   color: #BFB2B2;
+  background-color: transparent;
 }
 
 input:focus {
@@ -1142,19 +1149,19 @@ input:focus {
 .group-input{
   margin-bottom: 59px;
 }
-.checkbox {
+.checkbox, .checkbox2 {
   display: flex;
   align-items: center;
   position: relative;
 }
 
-.checkbox input[type="checkbox"] {
+.checkbox input[type="checkbox"], .checkbox2 input[type="checkbox"] {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-.checkbox label {
+.checkbox label, .checkbox2 label {
   display: block;
   align-items: center;
   cursor: pointer;
@@ -1163,7 +1170,7 @@ input:focus {
   padding-left: 40px;
 }
 
-.checkbox label:before {
+.checkbox label:before, .checkbox2 label:before {
   content: "";
   display: inline-block;
   width: 20px;
@@ -1180,37 +1187,40 @@ input:focus {
 }
 
 /* Іконка галочки */
-.checkbox input[type="checkbox"]:checked + label:before {
+.checkbox input[type="checkbox"]:checked + label:before,
+.checkbox2 input[type="checkbox"]:checked + label:before {
   background-image: url('../img/check.svg'); /* Вкажи шлях до своєї картинки галочки */
   background-color: #fff;
   border-color: #fff;
 }
 
 /* Текст посилання в чекбоксі */
-.checkbox label a {
+.checkbox label a, .checkbox2 label a  {
   text-decoration: underline;
   color: black;
 }
 
-.checkbox small{
+.checkbox small, .checkbox2 small{
   position: absolute;
   bottom: -25px;
 }
 
 /* Помилки валідації */
-.checkbox .error {
+.checkbox .error, .checkbox2 .error {
   color: red;
   font-size: 12px;
   margin-top: 5px;
   display: block; /* Щоб показати помилку під чекбоксом */
 }
 
-.checkbox input[type="checkbox"].error + label:before {
+.checkbox input[type="checkbox"].error + label:before,
+.checkbox2 input[type="checkbox"].error + label:before {
   border-color: red;
 }
 
 /* Коли все в порядку, прибираємо червону рамку */
-.checkbox input[type="checkbox"]:checked + label:before {
+.checkbox input[type="checkbox"]:checked + label:before,
+.checkbox2 input[type="checkbox"]:checked + label:before {
   border-color: black;
 }
 
@@ -1282,6 +1292,25 @@ input:focus {
   display: none;
 }
 
+.contacts-form2{
+  position: relative;
+  height: 533px;
+  padding-top: 20px
+}
+.contacts-form2 .h2-left{
+  margin-bottom: 54px;
+
+}
+.contacts-form2 .group-input {
+  margin-bottom: 45px;
+}
+.contacts-form2 .submit-btn{
+  bottom: -50px;
+  background-color: transparent;
+  padding: 20px 0px;
+}
+
+
 /* Адаптивність */
 @media (max-width: 960px) {
   .container-f {
@@ -1348,12 +1377,12 @@ input:focus {
       display: inline;
 
     }
-    .checkbox label{
+    .checkbox label, .checkbox2 label{
 
       display: inline;
       padding-left: 35px;
     }
-    .checkbox label:before{
+    .checkbox label:before, .checkbox2 label:before{
       position: absolute;
       left: 0px;
       top:5px
@@ -1380,8 +1409,143 @@ input.error {
 }
 
 
+.application-form2 input[type="text"]{
+  background-color: transparent;
+
+}
+
+.contacts-block{
+  background-color: #f9f9f9;
+  padding-bottom: 30px;
+  /* background-color: ; */
+
+}
+
+.contacts-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+
+.contacts-info, .contacts-form {
+  width: 40%;
+  padding: 20px;
+ 
+}
+
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-column {
+  width: 45%;
+}
+
+.contact-column h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-column p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.social-icons a {
+  margin-right: 15px;
+}
+
+.social-icons img {
+  width: 25px;
+  height: 25px;
+}
+
+.wrap-part-contacts{
+  margin-bottom: 50px;
+}
+
+.contacts-link{
+  text-decoration: none;
+  color: #000;
+  transition: all ease 0.3;
+}
+
+.contacts-link:hover{
+  text-decoration: none;
+  color: #89744F;
+}
 
 
+.social-icons a{
+  margin-right: 30px;
+}
+.wrap-part-contacts.webs{
+  margin-bottom: 70px;
+}
+
+.cont-phones{
+  font-size: 24px;
+  transition: all ease 0.3;
+  text-decoration: none;
+  color: #000;
+  display: block;  
+  margin: 20px 0px 10px
+}
+.cont-phones:hover{
+  color: #89744F;
+}
+
+
+.wrap-copy-info{
+  display: flex;
+  padding: 30px 0px;
+  align-items: center;
+  justify-content: space-around;
+}
+.it{
+  width: 33%;
+  align-self: center;
+  font-size: 14px;
+}
+
+.copt-t{
+  font-size: 14px;
+}
+
+.mart{
+  transition: all ease 0.3s;;
+  color: #000;
+
+}
+.mart:hover{
+  color: #89744F
+}
+
+
+@media (max-width: 768px) {
+  .contacts-info, .contacts-form {
+      width: 100%;
+  }
+  
+  .contacts-wrapper {
+      padding: 20px;
+  }
+
+  .contact-details {
+      flex-direction: column;
+  }
+
+  .contact-column {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  .contacts-form2 {
+
+    height: 495px;
+  }
+}
 
 @media screen and (max-width: 1800px){
   .h1 {
@@ -1439,6 +1603,9 @@ input.error {
   .tab.tab2 .tab-name:after{
     right: 6px;
   }
+  .contacts-info, .contacts-form {
+    width: 46%;
+  }
 }
 
 @media screen and (max-width: 1200px){
@@ -1467,6 +1634,12 @@ input.error {
   }
   .tabs-section {
     margin-top: -228px;
+  }
+  .big-phones {
+    font-size: 42px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 12px;
   }
 
 }
@@ -1609,6 +1782,12 @@ input.error {
   .line-with-btn a{
     padding-left: 30px;
   }
+  .contacts-info, .contacts-form {
+    width: 100%;
+  }
+  .cont-phones {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 960px){
@@ -1699,11 +1878,38 @@ input.error {
   .tabs-section {
     margin-top: -353px;
   }
-
+  .wrap-copy-info{
+    flex-direction: column;
+    align-items: center;
+  }
+  .it{
+    width: 100%;
+    text-align: center;
+  }
+  .copt-t.mart-b{
+    text-align: center;
+  }
+  .logot{
+    margin: 15px 0px;
+  }
 }
 
+.logot{
+  align-self: center;
+}
+.logot img{
+  width: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+.mart-b{
+  align-self: end;
+  text-align: right;
+}
 
 @media screen and (max-width: 760px){
+
   .h1 {
     font-size: 98px;
   }
@@ -1750,8 +1956,8 @@ input.error {
   }
 
  .big-phones {
-    font-size: 39px;   
-    margin-bottom: 28px;
+    font-size: 33px;   
+    margin-bottom: 20px;
  }
  .about-section .three-item {
   width: 300px;
@@ -1813,9 +2019,13 @@ input.error {
   }
   .three-section{
     margin-bottom: 50px;
+    padding-top: 10px;
   }
   .map-wrap , #map{
     height: 500px;;
+  }
+  .about-section .three-item{
+    width: 100%;
   }
 }
 

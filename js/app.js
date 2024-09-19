@@ -7,27 +7,60 @@ let closeMenuBtn = document.querySelector('.closebutton');
 let openPhonesBtn = document.querySelector('.trigger-phone-block');
 let closePhonesSide = document.querySelector('.close-phones');
 
+
+
 openMenuBtn.addEventListener('click', () => {
   document.querySelector(".layout").classList.add('active');
   document.getElementById("mySidenav").classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
 });
-
 
 closeMenuBtn.addEventListener('click', () => {
   document.querySelector(".layout").classList.remove('active');
-  document.getElementById("mySidenav").classList.remove('open');  
+  document.getElementById("mySidenav").classList.remove('open'); 
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
 });
 
 openPhonesBtn.addEventListener('click', () => {
   document.querySelector(".phones-sidenav").classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
 });
 
 closePhonesSide.addEventListener('click', () => {
   document.querySelector(".phones-sidenav").classList.remove('open');
-
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
 }); 
 
+let menuLinks = document.querySelectorAll('.menu-link');
+let sidenav = document.getElementById('mySidenav');
+let body = document.body;
+let layout = document.querySelector(".layout");
 
+menuLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // Запобігаємо стандартній поведінці посилання
+
+    // Отримуємо ID секції, до якої потрібно скролити
+    let targetId = this.getAttribute('href').substring(1);
+    let targetSection = document.getElementById(targetId);
+
+    // Закриваємо бокове меню
+    sidenav.classList.remove('open');
+    layout.classList.remove('active');
+    body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+
+    // Скролимо до відповідної секції
+    targetSection.scrollIntoView({
+      behavior: 'smooth', // Плавний скрол
+      block: 'start'
+    });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const tablinks = document.querySelectorAll(".tablinks");
@@ -193,6 +226,125 @@ function validateEmailOrPhone(input) {
   }
   return false;
 }
+
+
+const form2 = document.getElementById('application-form2');
+
+form2.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name-form2');
+  const contact = document.getElementById('contact-form2');
+  const agreement = document.getElementById('data-agreement-form2');
+
+  let isValid = true;
+
+  // Очищуємо попередні помилки
+  clearErrors();
+
+  // Перевірка поля "Ім'я"
+  if (name.value.length < 2) {
+    showError(name, 'Це поле має бути заповнене');
+    isValid = false;
+  }
+
+  // Перевірка поля "Телефон / E-mail"
+  if (!validateEmailOrPhone(contact.value)) {
+    showError(contact, 'Перевірте правильність введення телефону або E-mail');
+    isValid = false;
+  }
+
+  // Перевірка чекбокса
+  if (!agreement.checked) {
+    showError(agreement, 'Це поле має бути заповнене');
+    isValid = false;
+  }
+
+  if (isValid) {
+    // Відправляємо форму, якщо все вірно
+    const formData = new FormData(form2);
+    fetch('send.php', {
+      method: 'POST',
+      body: formData
+    })
+      .then(response => response.text())
+      .then(data => {
+        console.log('Успішно відправлено', data);
+        // Тут можна додати функціонал для показу попапу або інших дій після успішної відправки
+      })
+      .catch(error => console.error('Помилка при відправці форми', error));
+  }
+});
+
+// Валідація під час введення в поля
+document.getElementById('name-form2').addEventListener('input', function() {
+  if (this.value.length >= 2) {
+    clearError(this);
+  }
+});
+
+document.getElementById('contact-form2').addEventListener('input', function() {
+  if (validateEmailOrPhone(this.value)) {
+    clearError(this);
+  }
+});
+
+document.getElementById('data-agreement-form2').addEventListener('change', function() {
+  if (this.checked) {
+    clearError(this);
+  }
+});
+
+// Функція для видалення помилки з поля
+function clearError(element) {
+  const errorText = element.nextElementSibling;
+  if (errorText && errorText.classList.contains('error')) {
+    errorText.style.display = 'none';
+    element.style.borderBottom = '2px solid black';
+  }
+}
+
+// Функція для очищення всіх попередніх помилок
+function clearErrors() {
+  const errorElements = document.querySelectorAll('.error');
+  errorElements.forEach(function (el) {
+    el.style.display = 'none';
+  });
+  const inputElements = document.querySelectorAll('input');
+  inputElements.forEach(function (el) {
+    el.style.borderBottom = '2px solid black';
+  });
+}
+
+// Функція для відображення помилки
+function showError(element, message) {
+  let errorText = element.nextElementSibling;
+  if (!errorText || errorText.className !== 'error') {
+    errorText = document.createElement('small');
+    errorText.className = 'error';
+    errorText.style.color = 'red';
+    errorText.innerText = message;
+    element.parentNode.appendChild(errorText);
+  }
+  element.style.borderBottom = '2px solid red';
+  errorText.style.display = 'block';
+}
+
+// Валідація для телефону або E-mail
+function validateEmailOrPhone(input) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]*$/;
+  if (emailRegex.test(input)) {
+    return true;
+  }
+  if (phoneRegex.test(input) && input.length >= 6) {
+    return true;
+  }
+  return false;
+}
+
+
+
 
 // Закриття попапу
 closeBtn.addEventListener('click', function() {
