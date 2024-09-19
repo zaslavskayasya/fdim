@@ -198,3 +198,19 @@ function validateEmailOrPhone(input) {
 closeBtn.addEventListener('click', function() {
   popup.classList.add('hidden');
 });
+
+ // Ініціалізація карти, центр і рівень масштабу
+ let map = L.map('map').setView([46.40173615458889, 30.745479427813507], 13);
+
+ // Додавання шару карти (OpenStreetMap)
+ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+ }).addTo(map);
+
+ // Додавання першої точки з підказкою
+ let marker1 = L.marker([46.40173615458889, 30.745479427813507]).addTo(map)
+     .bindPopup('Офіс "familny dim" ').openPopup();
+
+ // Додавання другої точки з підказкою
+ let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
+     .bindPopup('rue Menars');

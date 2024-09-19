@@ -16,12 +16,13 @@ html {
   font-size: 1em;
   line-height: 1.4;
   padding: 0px;
+  overflow-x: hidden;
 }
 
 body{
   margin: 0px;
   font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 /*
@@ -528,7 +529,7 @@ textarea {
   height: 58px;
   background-size: cover;
   position: absolute;
-  left: -100px;
+  /* left: -100px; */
   top: -5px;
 }
 .about-section .accent-text{
@@ -1017,6 +1018,97 @@ textarea {
   margin: 0px 0px 20px 0px;
 }
 
+.maps-section{
+  position: relative;
+}
+
+.text-map-part{
+  max-width: 400px ;
+  padding-bottom: 100px;
+  height: 690px ;
+}
+.text-map-part .overlay{
+  bottom: 203px;
+  z-index: 999;
+  padding: 23px 58px 17px 66px;
+  right: 567px;
+
+}
+
+
+.text-map-part .norm-text{
+  margin-bottom: 90px;
+}
+
+
+
+.line-with-btn{
+  position: absolute;
+  bottom: 203px;
+  left: 0px;
+  background-color: #F8F2E9;
+  width: 100%;
+  padding: 50px 0px 50px 13%;
+
+}
+
+.submit-btn-map {
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.map-wrap{
+  position: absolute;
+  right: -17px;
+  top: 0px;
+  height:760px;
+  width: 1000px;
+}
+
+
+#map {
+ width: 100%;
+ height: 700px;
+ /* position: relative; */
+}
+.line-pick{
+  position: absolute;
+  right:0px;
+  top:2px;
+  width: 491px ;
+  height: 101px;
+  background-image: url(../img/white-line.svg);
+}
+
+.line-map{
+  
+}
+
+
+.arrow {
+  margin-left: 10px;
+  transition: margin-left 0.3s;
+}
+
+.submit-btn-map:hover .arrow {
+  margin-left: 16px;
+}
+
+.big-size-text{
+  font-size: 55px;
+  font-weight: 700;
+  color: #89744F;
+  text-align: center;
+  opacity: 0.1;
+  text-transform: uppercase;
+  padding: 30px 0px;
+}
 
 
 form {
@@ -1222,7 +1314,7 @@ input:focus {
   .right-side {
       position: relative;
       padding-left: 0px;
-      padding-bottom: 190px;
+      padding-bottom: 100px;
       margin-bottom: 70px;
     }
     .submit-btn{
@@ -1266,7 +1358,10 @@ input:focus {
       left: 0px;
       top:5px
     }
-
+    .tab.tab2 .tab-name:after{
+      right: 56px;
+      top: 9px;
+    }
 }
 
 /* Помилки валідації */
@@ -1284,12 +1379,32 @@ input.error {
   border: 2px solid red;
 }
 
+
+
+
+
 @media screen and (max-width: 1800px){
   .h1 {
     right: 6%;
   }
   .h1 {
     font-size: 120px;
+  }
+  .line-with-btn{
+    padding-left: 8%
+  }
+  .map-wrap {
+    width: 812px;
+  }
+  .text-map-part .overlay{
+    right: 380px;
+
+  }
+  .text-map-part{
+    padding-left: 30px;
+  }
+  .tab.tab2 {
+    width: 75%;
   }
 }
 
@@ -1309,7 +1424,21 @@ input.error {
   .wrap-design {
     max-width: 500px;
   }
-
+  .big-size-text {
+    font-size: 36px;
+  }
+  .map-wrap {
+    width: 612px;
+  }
+  .text-map-part .overlay {
+    right: 180px;
+  }
+  .tab.tab2 {
+    width: 85%;
+  }
+  .tab.tab2 .tab-name:after{
+    right: 6px;
+  }
 }
 
 @media screen and (max-width: 1200px){
@@ -1337,7 +1466,7 @@ input.error {
     margin-bottom: 70px;
   }
   .tabs-section {
-    margin-top: -343px;
+    margin-top: -228px;
   }
 
 }
@@ -1431,7 +1560,55 @@ input.error {
     .tabs-section{
       margin-bottom: 50px;;
     }
+    .map-wrap{
+      position: relative;
+      width: 100%;
+    }
+    .text-map-part {
+      max-width: 100%;
+      padding-bottom: 100px;
+      height: auto;
+  }
+  .line-with-btn {
+    position: absolute;
+    bottom: auto;
+    left: 0px;
+  }
+  .text-map-part .h2-left {
+    font-size: 26px;
+    margin-bottom: 44px;
+  }
+  .text-map-part .norm-text {
+    margin-bottom: 40px;
+  }
+  .map-wrap {
+    right: 0;
+    left: 0px;
+    top:-30px;
+  }
+  .text-map-part .overlay {
+    right: auto;
+    left: 0px;
+    width: 100%;
+  }
+  .right-side {
 
+    margin-bottom: 30px;
+  }
+  .line-with-btn {
+    padding: 25px 0px 25px 13%;
+  }
+  .text-map-part .overlay{
+    padding: 23px 0px 17px 0px;
+  }
+  .line-with-btn {
+    padding: 25px 0px 25px 0px;
+    right: 0;
+    width: 100%;
+  }
+  .line-with-btn a{
+    padding-left: 30px;
+  }
 }
 
 @media screen and (max-width: 960px){
@@ -1468,7 +1645,7 @@ input.error {
   .about-section .wrap-texts .h2:before { 
     width: 50px;
     height: 42px;   
-    left: -77px;
+    /* left: -77px; */
     top: -1px;
   }
   .about-section .accent-text{
@@ -1515,6 +1692,12 @@ input.error {
   }
   .numero-section {
     padding-top: 50px;
+  }
+  .submit-btn{
+    padding: 25px 20px
+  }
+  .tabs-section {
+    margin-top: -353px;
   }
 
 }
@@ -1576,6 +1759,7 @@ input.error {
   }
   .mob-image {
     margin-bottom: 30px;
+    margin-top: 20px;
   }
   .list-of_pluses{
     margin-top: 0px;
@@ -1584,7 +1768,7 @@ input.error {
     margin-bottom: 10px;
   }
   .tabs-section {
-    margin-top: -316px;
+    margin-top: -297px;
   }
   .numero{
     font-size: 10px;
@@ -1608,6 +1792,30 @@ input.error {
   }
   input{
     width: 90%;
+  }
+  .about-section .three-part {
+    margin-bottom: 30px;
+  }
+  .parallax-block{
+    margin-bottom: 50px;
+  }
+  .quality-second{
+    margin-bottom: 50px;;
+  }
+  .tab-content-wrap {
+    padding-top: 30px;
+  }
+  .tabcontent{
+    padding-left: 0px;
+  }
+  .numero-section{
+    padding-top: 0px;
+  }
+  .three-section{
+    margin-bottom: 50px;
+  }
+  .map-wrap , #map{
+    height: 500px;;
   }
 }
 
@@ -1633,7 +1841,7 @@ input.error {
   .about-section .wrap-texts .h2:before {
     width: 40px;
     height: 32px;
-    left: -75px;
+    /* left: -75px; */
     top: -1px;
   }
   .tab-name:after {

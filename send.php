@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $contact = htmlspecialchars($_POST['contact']);
     $agreement = isset($_POST['data-agreement']) ? 'Згоден' : 'Не згоден';
 
-    $to = 'web.zaslavskaya@gmail.com'; // Вкажіть свою поштову скриньку
+    $to = 'some-mai@mail.com'; // Вкажіть свою поштову скриньку
     $subject = 'Нова заявка з форми';
     $message = "Ім'я: $name\nКонтакт: $contact\nЗгода на обробку персональних даних: $agreement";
     $headers = 'From: webmaster@example.com' . "\r\n" .

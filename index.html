@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
-  <link rel="stylesheet" href="css/style.css">
+ 
   <meta name="description" content="">
 
   <meta property="og:title" content="">
@@ -26,12 +26,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="plugins/fs/js/lightboxed/lightboxed.js"></script>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
 </head>
 
 <body>
@@ -629,7 +635,70 @@
   </div>
 </div>
 
+<div class="container">
+  <p class="big-size-text">
+    Ідеальне житло для сучасної людини!
+  </p>
+</div>
 
+
+<div class="maps-section">
+    <div class="container">
+      <div class="text-map-part">
+        <h2 class="h2-left">Чекаємо на вас в 
+          нашому офісі</h2>
+          <p class="norm-text">
+            Раді будемо проконсультувати та обговорити деталі!
+          </p>
+          
+          <div class="line-with-btn"> 
+            <a target="_blank" href="https://www.google.com/maps/dir/?api=1&destination=46.40173615458889,30.745479427813507"
+             type="submit" class="submit-btn-map">
+             Прокласти маршрут <span class="arrow">
+                <img src="./img/arrow.svg" alt=""></span>
+              </a>
+          </div>
+          <div class="overlay">
+            <h3 class="overlay-title">Хочеш сучасне і безпечне житло?</h3>
+            <p class="overlay-subtitle">Завітайте до нашого офісу</p>
+          </div>
+
+      </div>
+    </div>
+    <div class="map-wrap">
+      <div id="map">
+        <!-- <div class="line-pick">
+
+        </div> -->
+      </div>
+
+    </div>
+</div>
+
+
+<div class="about-section">
+  <div class="three-section">
+    <div class="container">
+      <div class="three-part">
+        <div class="three-item item-decors">
+            <img class="deco-img" src="./img/decor1.png" alt="decor">
+            <p class="norm-text">Все зроблено для вашого комфортного життя!</p>
+        </div>
+        <div class="three-item item-decors">
+          <img class="deco-img" src="./img/decor1.png" alt="decor">
+          <p class="norm-text">Абсолютна автономність відповідно до вимог сучасності</p>
+      </div>
+      <div class="three-item item-decors">
+        <img class="deco-img" src="./img/decor1.png" alt="decor">
+        <p class="norm-text">Унікальні Паризькі фасади замість звичної одноманітності новобудов</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script  src="js/app.js" > </script>
 
 </body>
