@@ -591,7 +591,7 @@ textarea {
   background-image: url(../img/paralax2.jpg);
 }
 
-.h2-center{
+.h2-center, .h2-left{
   font-size: 36px;
   color: #89744F;
   text-transform: uppercase;
@@ -611,6 +611,22 @@ textarea {
   left: 50%;
   transform: translate(-50%, 0%);
 }
+
+.h2-left{
+  text-align: left;
+  font-weight: 400;
+}
+.h2-left:after{
+  content: "";
+  width: 40px;
+  height: 2px;
+  background-image: url(../img/uk_flag.svg);
+  position: absolute;
+  bottom: -20px;
+  left: 0%;
+}
+
+
 
 .quality-section{
     margin-bottom: 126px ;
@@ -943,6 +959,331 @@ textarea {
 
 
 
+ /* form-block */
+
+ .container-f {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 50px; */
+  position: relative;
+}
+
+.left-side {
+  position: relative;
+  width: 50%;
+}
+
+.right-side {
+  width: 50%;
+  position: relative;
+  padding-left: 140px; /* Відступ між картинкою та формою */
+}
+
+.main-image {
+  width: auto
+}
+
+.wrap-left-img{
+  max-width: 954px;
+  overflow: hidden;
+  height: 929px;
+  object-fit: cover;
+  background-image: url(../img/form-picture.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 114px;
+  right: 0;
+  background: white;
+  padding: 18px 58px 16px 66px;
+}
+
+.overlay-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.overlay-subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: black;
+  margin: 0px 0px 20px 0px;
+}
+
+
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+input {
+  display: block;
+  width: calc(100% - 147px);
+  margin: 9px 0;
+  padding: 5px 0px;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 200%;
+  color: #BFB2B2;
+}
+
+input:focus {
+  color: black;
+  outline: none;
+}
+
+.group-input{
+  margin-bottom: 59px;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkbox label {
+  display: block;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 400;
+  position: relative;
+  padding-left: 40px;
+}
+
+.checkbox label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  margin-right: 10px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+/* Іконка галочки */
+.checkbox input[type="checkbox"]:checked + label:before {
+  background-image: url('../img/check.svg'); /* Вкажи шлях до своєї картинки галочки */
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* Текст посилання в чекбоксі */
+.checkbox label a {
+  text-decoration: underline;
+  color: black;
+}
+
+.checkbox small{
+  position: absolute;
+  bottom: -25px;
+}
+
+/* Помилки валідації */
+.checkbox .error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block; /* Щоб показати помилку під чекбоксом */
+}
+
+.checkbox input[type="checkbox"].error + label:before {
+  border-color: red;
+}
+
+/* Коли все в порядку, прибираємо червону рамку */
+.checkbox input[type="checkbox"]:checked + label:before {
+  border-color: black;
+}
+
+.submit-btn {
+  background-color: #F8F2E9;
+  border: none;
+  font-size: 16px;
+  padding: 49px 20px;
+  cursor: pointer;
+  position: absolute;
+  left: 0px;
+  bottom: 115px;
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  padding-left: 140px;
+  font-weight: 600;
+}
+
+.arrow {
+  margin-left: 10px;
+  transition: margin-left 0.3s;
+}
+
+.submit-btn:hover .arrow {
+  margin-left: 16px;
+}
+
+/* Попап */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Затемнення фону */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Вперед всіх елементів */
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  width: 25px;
+}
+.popup-text{
+  padding-top: 50px;
+  max-width: 80%;
+  margin: 0 auto 50px;
+}
+
+.popup .close img{
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Адаптивність */
+@media (max-width: 960px) {
+  .container-f {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-side {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .right-side {
+    width: 100%;
+  }
+  .overlay{
+    width: 100%;
+    padding: 18px 0 16px 74px;
+  }
+  .overlay-title, .overlay-subtitle{
+    padding-left: 30px;
+
+  }
+  .wrap-left-img {
+    max-width: 100%;
+    background-size: cover;
+    max-height: 500px;
+    background-attachment: fixed;
+  }
+  .right-side {
+      position: relative;
+      padding-left: 0px;
+      padding-bottom: 190px;
+      margin-bottom: 70px;
+    }
+    .submit-btn{
+      bottom: 0px;
+    }
+    .submit-btn {
+      padding-left: 74px;
+    }
+    #application-form{
+      padding-left: 30px;;
+    }
+    .h2-left{
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 45px;
+    }
+    .h2-left:after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .label{
+      font-size: 14px;
+    }
+    input{
+      font-size: 16px;;
+    }
+    .data-agreement{
+      font-size: 16px;
+    }
+    .data-agreement a{
+      display: inline;
+
+    }
+    .checkbox label{
+
+      display: inline;
+      padding-left: 35px;
+    }
+    .checkbox label:before{
+      position: absolute;
+      left: 0px;
+      top:5px
+    }
+
+}
+
+/* Помилки валідації */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+input.error {
+  border-bottom: 2px solid red;
+}
+
+.checkbox input.error {
+  border: 2px solid red;
+}
+
 @media screen and (max-width: 1800px){
   .h1 {
     right: 6%;
@@ -1264,6 +1605,9 @@ textarea {
   .wrap-all-nomero .lightboxed{
     width: 35px;
     height: 35px;
+  }
+  input{
+    width: 90%;
   }
 }
 
