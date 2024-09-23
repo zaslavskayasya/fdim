@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = htmlspecialchars($_POST['name']);
-    $contact = htmlspecialchars($_POST['contact']);
-    $agreement = isset($_POST['data-agreement']) ? 'Згоден' : 'Не згоден';
+    $name = htmlspecialchars($_POST['name-form2']);
+    $contact = htmlspecialchars($_POST['contact-form2']);
+    $agreement = isset($_POST['data-agreement-form2']) ? 'Згоден' : 'Не згоден';
 
     $to = 'some-mai@mail.com'; // Вкажіть свою поштову скриньку
     $subject = 'Нова заявка з форми';

@@ -1091,7 +1091,7 @@ html, body {
 
 .overlay {
   position: absolute;
-  bottom: 114px;
+  bottom: 162px;
   right: 0;
   background: white;
   padding: 18px 58px 16px 66px;
@@ -1142,15 +1142,16 @@ html, body {
   background-color: #F8F2E9;
   width: 100%;
   padding: 50px 0px 50px 13%;
+  transition: all ese 0.3s;
 }
 
 .line-with-btn:hover{
-
+  background-color: #f0c079;
 }
 
 
 .submit-btn-map {
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
   margin-top: 20px;
   width: 100%;
@@ -1158,6 +1159,8 @@ html, body {
   font-weight: 600;
   color: #000;
   text-decoration: none;
+  transition: all ease 0.3s;
+  font-family: "Montserrat", sans-serif;
 }
 
 .map-wrap{
@@ -1193,7 +1196,7 @@ html, body {
   transition: margin-left 0.3s;
 }
 
-.line-with-btn:hover .submit-btn-map .arrow {
+.line-with-btn:hover  .arrow {
   margin-left: 16px;
 }
 
@@ -1255,6 +1258,7 @@ input:focus {
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 25px;;
 }
 
 .checkbox input[type="checkbox"], .checkbox2 input[type="checkbox"] {
@@ -1328,24 +1332,35 @@ input:focus {
 
 .submit-btn {
   background-color: #F8F2E9;
+  font-family: "Montserrat", sans-serif;
   border: none;
-  font-size: 16px;
-  padding: 49px 20px;
+  font-size: 22px;
+  padding: 44px 20px;
   cursor: pointer;
   position: absolute;
   left: 0px;
-  bottom: 115px;
+  bottom: 165px;
   margin-top: 20px;
   width: 100%;
   text-align: left;
   padding-left: 140px;
   font-weight: 600;
+  transition: all ease 0.3s;
 }
 
 .arrow {
   margin-left: 10px;
   transition: margin-left 0.3s;
 }
+
+.submit-btn:hover{
+  background-color: #f0c079;
+}
+
+.submit-btn.active{
+  background-color: #f0c079;
+}
+
 
 .submit-btn:hover .arrow {
   margin-left: 16px;
@@ -1407,9 +1422,18 @@ input:focus {
   margin-bottom: 45px;
 }
 .contacts-form2 .submit-btn{
-  bottom: -50px;
+  bottom: -150px;
   background-color: transparent;
   padding: 20px 0px;
+  border: 1px solid #000;
+  text-align: center;
+  transition: all ease 0.3s;
+  font-family: "Montserrat", sans-serif;
+}
+.contacts-form2 .submit-btn:hover{
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff
 }
 
 
@@ -1523,6 +1547,13 @@ input.error {
 
 }
 
+.contacts-block  .h2-left {
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 73px;
+
+}
+
 .contacts-wrapper {
   display: flex;
   justify-content: space-between;
@@ -1557,7 +1588,14 @@ input.error {
 
 .social-icons a {
   margin-right: 15px;
+  text-decoration: none;
+  transition: all ease 0.3s
 }
+
+.social-icons a:hover svg path {
+  fill: #89744F
+}
+
 
 .social-icons img {
   width: 25px;
@@ -1589,7 +1627,7 @@ input.error {
 
 .cont-phones{
   font-size: 24px;
-  transition: all ease 0.3;
+  transition: all ease 0.3s;
   text-decoration: none;
   color: #000;
   display: block;  
@@ -1859,25 +1897,25 @@ input.error {
   .map-wrap {
     right: 0;
     left: 0px;
-    top:-30px;
+    top:-8px;
+    margin-bottom: 30px;
   }
   .text-map-part .overlay {
     right: auto;
     left: 0px;
     width: 100%;
+    bottom: 0px;
   }
   .right-side {
 
     margin-bottom: 30px;
   }
-  .line-with-btn {
-    padding: 25px 0px 25px 13%;
-  }
+
   .text-map-part .overlay{
     padding: 23px 0px 17px 0px;
   }
   .line-with-btn {
-    padding: 25px 0px 25px 0px;
+    padding: 25px 0px 25px 40px;
     right: 0;
     width: 100%;
   }
@@ -1993,6 +2031,10 @@ input.error {
   }
   .logot{
     margin: 15px 0px;
+  }
+  .submit-btn,
+  .submit-btn-map {
+    font-size: 16px;
   }
 }
 

@@ -51,6 +51,24 @@ let sidenav = document.getElementById('mySidenav');
 let body = document.body;
 let layout = document.querySelector(".layout");
 
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('input', function() {
+    // Знаходимо найближчу кнопку submit
+    const submitButton = this.closest('form').querySelector('button[type="submit"]');
+    
+    // Додаємо або забираємо клас в залежності від введеного значення
+    if (this.value.trim() !== '') {
+      submitButton.classList.remove('inactive');
+      submitButton.classList.add('active');
+    } else {
+      submitButton.classList.remove('active');
+      submitButton.classList.add('inactive');
+    }
+  });
+});
+
+
 menuLinks.forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault(); // Запобігаємо стандартній поведінці посилання
@@ -272,9 +290,12 @@ form2.addEventListener('submit', function(e) {
   }
 
   if (isValid) {
+    // Показуємо попап після успішної валідації
+    popup.classList.remove('hidden');
+
     // Відправляємо форму, якщо все вірно
     const formData = new FormData(form2);
-    fetch('send.php', {
+    fetch('send2.php', {
       method: 'POST',
       body: formData
     })
