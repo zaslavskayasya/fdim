@@ -2035,6 +2035,8 @@ input.error {
   .submit-btn,
   .submit-btn-map {
     font-size: 16px;
+    padding-left: 0;
+    text-align: center;
   }
 }
 
@@ -2173,6 +2175,10 @@ input.error {
   }
   .about-section .three-item{
     width: 100%;
+  }
+  .contacts-block .container{
+    padding-bottom: 80px;
+
   }
 }
 
