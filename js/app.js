@@ -8,6 +8,7 @@ let openPhonesBtn = document.querySelector('.trigger-phone-block');
 let closePhonesSide = document.querySelector('.close-phones');
 
 
+let closeLayout = document.querySelector('#closelayout');
 
 openMenuBtn.addEventListener('click', () => {
   document.querySelector(".layout").classList.add('active');
@@ -34,6 +35,16 @@ closePhonesSide.addEventListener('click', () => {
   document.body.style.overflow = '';
   document.documentElement.style.overflow = '';
 }); 
+
+
+closeLayout.addEventListener('click', () => {
+
+  document.querySelector(".layout").classList.remove('active');
+  document.getElementById("mySidenav").classList.remove('open'); 
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+})
+
 
 let menuLinks = document.querySelectorAll('.menu-link');
 let sidenav = document.getElementById('mySidenav');

@@ -25,9 +25,13 @@ body{
   font-family: "Montserrat", sans-serif;
   /* overflow-x: hidden; */
 }
+
 body.body-no-scroll {
-  overflow: hidden;
+  /* overflow: hidden; */
 }
+
+
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -378,20 +382,33 @@ textarea {
   min-height: 920px;
   margin-bottom: 136px;
 }
+html, body {
+  /* height: 100%;
+  box-sizing: border-box; */
+}
 
 .layout{
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
   /* background-color: rgba(250, 250, 250 , 0.3); */
   width: 100%;
   height: 100%;
+  min-height: 100%;
   pointer-events: none;
   transition: all ease 0.7s;
+  z-index: 9;
+
+  /* background-color: red; */
+  display: block;
+
 }
 
 .layout.active{
-  background-color: rgba(250, 250, 250 , 0.3);
+  background-color: rgba(250, 250, 250 , 0.5);
+  /* background-color: red; */
+  pointer-events: auto;
+
 }
 
 /* The side navigation menu */
@@ -491,11 +508,20 @@ textarea {
 .menu-soc-img{
     max-width: 25px;
     cursor: pointer;
+
   }
   
   .phones-section{
     list-style: none;
     padding-left: 0px;
+}
+
+.menu-soc-img:hover svg path{
+  transition: all ease 0.3s;
+}
+
+.menu-soc-img:hover svg path {
+  fill: #89744F;
 }
 
 .phone-item{
