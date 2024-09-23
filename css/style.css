@@ -298,14 +298,25 @@ textarea {
   top: 0px;
   padding: 30px;  
   z-index: 999;
+  cursor: pointer;
+  transition: all ease 0.3s;
 }
 
-.menu-trigger img{
+.menu-trigger svg{
   width: 34px;
   height: 24px;
   cursor: pointer;
 }
-
+.menu-trigger:hover{
+  opacity: 0.8;
+}
+.menu-trigger:hover  svg  path {
+  fill: #89744F;
+  opacity: 1;
+}
+.trigger-phone-block{
+ cursor: pointer
+}
 
 .main-contact-block{
   list-style: none;
@@ -317,7 +328,26 @@ textarea {
 }
 .main-contact-block .contact-item{
   margin-bottom: 75px;
+  transition: all ease 0.3s;;
 }
+
+.contact-item:hover svg {
+  opacity: 0.8;  
+}
+
+.hidden-element {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+
+}
+
+/* Клас, що додається при скролі */
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 .h1 {
@@ -417,6 +447,9 @@ textarea {
   width: 33px;
   height: 33px;
   cursor: pointer;
+}
+.sidenav .closebutton:hover ,  .phones-sidenav .close-phones:hover{
+  opacity: 0.6;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -525,6 +558,7 @@ textarea {
   margin-bottom: 74px;
   font-family: "Libre Bodoni", serif; 
   position: relative;
+  padding-left: 80px;;
    
 }
 
@@ -535,7 +569,7 @@ textarea {
   height: 58px;
   background-size: cover;
   position: absolute;
-  /* left: -100px; */
+  left: -20px;
   top: -5px;
 }
 .about-section .accent-text{

@@ -366,3 +366,23 @@ closeBtn.addEventListener('click', function() {
  // Додавання другої точки з підказкою
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
      .bindPopup('rue Menars');
+
+
+
+// Вибираємо всі елементи, які мають клас "hidden-element"
+const hiddenElements = document.querySelectorAll('.hidden-element');
+
+// Налаштовуємо Intersection Observer
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show'); // Додаємо клас, коли елемент видимий
+            observer.unobserve(entry.target); // Прибираємо спостерігач для цього елемента
+        }
+    });
+}, { threshold: 0.5 });
+
+// Спостерігаємо за кожним елементом
+hiddenElements.forEach(element => {
+    observer.observe(element);
+});
