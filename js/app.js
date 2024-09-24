@@ -127,10 +127,12 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   tablinks.forEach(button => {
+
     button.addEventListener("click", function() {
       const cityName = this.getAttribute("data-tab");
       openCity(cityName);
       this.classList.add("active");
+      window.scrollBy(0, 50);
     });
   });
 
