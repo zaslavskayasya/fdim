@@ -342,7 +342,7 @@ textarea {
   transform: translateY(-5px);
 }
 
-.hidden-element {
+.hidden-element, button.hidden-element {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
@@ -359,7 +359,7 @@ h1.show{
 }
 
 /* Клас, що додається при скролі */
-.show {
+.show , button.show{
   opacity: 1;
   transform: translateY(0);
 }
@@ -514,7 +514,7 @@ html, body {
 .socials{
     display: flex;
     justify-content: space-between;
-    max-width: 180px;
+    max-width: 271px;
     align-items: center;
     margin: 0 auto;
 }
@@ -522,6 +522,7 @@ html, body {
 .menu-soc-img{
     max-width: 25px;
     cursor: pointer;
+    padding: 30px;
 
   }
   
@@ -787,7 +788,7 @@ html, body {
 
 /* Style the tab */
 .tab {
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #fff;
   display: flex;
   /* flex-direction: column; */
@@ -897,6 +898,12 @@ html, body {
   display: flex;
 }
 
+.tabcontent2{
+  position: relative;
+  overflow: hidden;
+  min-height: 700px;;
+}
+
 .tab-content-wrap .h2{
   font-size: 30px;
   margin-bottom: 63px ;
@@ -909,16 +916,18 @@ html, body {
   align-items: center;
 }
 .wrap-design{
-  max-width: 700px;
-  position: relative;
+  width: 711px;
+  position: absolute;
+  right: 0px;
+  top: -80px
 }
 .wrap-design img{
-  float: right;
+
   width: 100%;
 }
 
 .tabcontent2 .wrap-illustrate .roomimg{
-  width: 800px;
+  width: 1100px;
   margin-left: 50px;
 }
 
@@ -1155,7 +1164,7 @@ html, body {
   left: 0px;
   background-color: #F8F2E9;
   width: 100%;
-  padding: 50px 0px 50px 13%;
+  padding: 44px 0px 48px 13%;
   transition: all ese 0.3s;
 }
 
@@ -1205,10 +1214,25 @@ html, body {
 }
 
 
-.arrow {
+#application-form .arrow {
   margin-left: 10px;
   transition: margin-left 0.3s;
+  margin-left: 10px;
+  animation: moveArrow 1.5s linear infinite;
 }
+
+@keyframes moveArrow {
+  0% {
+    margin-left: 10px;
+  }
+  50% {
+    margin-left: 30px;
+  }
+  100% {
+    margin-left: 10px;
+  }
+}
+
 
 .line-with-btn:hover  .arrow {
   margin-left: 16px;
@@ -1450,6 +1474,9 @@ input:focus {
   color: #fff
 }
 
+.contacts-form2 .submit-btn:hover .arrow svg path{
+ fill: #fff
+}
 
 /* Адаптивність */
 @media (max-width: 960px) {
@@ -1724,6 +1751,22 @@ input.error {
   .tab.tab2 {
     width: 75%;
   }
+  .tabcontent2 .wrap-illustrate .roomimg {
+    width: 907px;
+    margin-left: 50px;
+    margin-top: 65px;
+  }
+  .tabcontent2{
+    min-height: auto
+  }
+}
+
+@media screen and (max-width: 1600px){
+  .tabcontent2 .wrap-illustrate .roomimg {
+    width: 807px;
+    margin-left: 50px;
+    margin-top: 65px;
+  }
 }
 
 
@@ -1800,6 +1843,19 @@ input.error {
 
 
 @media screen and (max-width: 1024px){
+  .wrap-design {
+    width: 400px;
+    position: relative;
+
+  }
+  .tabcontent2 .wrap-illustrate .roomimg{
+    margin-top: 0px;
+    margin-bottom: 50px;;
+
+  }
+  .tab-content-wrap{
+    margin-bottom: 0px;
+  }
     .about-section .two-part{
       flex-direction: column-reverse;
       margin: 0 auto 54px;
@@ -2052,6 +2108,7 @@ input.error {
     padding-left: 0;
     text-align: center;
   }
+
 }
 
 .logot{
@@ -2180,9 +2237,15 @@ input.error {
   .numero-section{
     padding-top: 0px;
   }
+  .tab-content-wrap{
+    margin-bottom: 0px;
+  }
   .three-section{
     margin-bottom: 50px;
     padding-top: 10px;
+  }
+  .tabs-section{
+    margin-bottom: 0px;;
   }
   .map-wrap , #map{
     height: 500px;;
