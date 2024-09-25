@@ -18,7 +18,7 @@ html {
   padding: 0px;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  
+
 }
 
 body{
@@ -913,7 +913,7 @@ html, body {
 .tabcontent2{
   position: relative;
   overflow: hidden;
-  min-height: 700px;;
+  min-height: 700px;
 }
 
 .tab-content-wrap .h2{
@@ -967,7 +967,8 @@ html, body {
   background-position: center;
   background-repeat: no-repeat;
   background-position: relative;
-  transition: all ease 0.3s;;
+  transition: all ease 0.3s;
+
 }
 
 .numero-section{
@@ -1027,6 +1028,7 @@ html, body {
   background-size: 50px 50px;
   background-repeat: no-repeat;
   background-position: 10% 90%;
+  transition: all ease 0.3s;
   
   transition: all ease 0.3s;
 }
