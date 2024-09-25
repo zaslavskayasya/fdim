@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function() {
   tablinks[0].click();
 });
 
+let hasScrolled = false;
 
 document.addEventListener("DOMContentLoaded", function() {
   const tablinks = document.querySelectorAll(".tablinks2");
@@ -126,13 +127,31 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById(cityName).style.display = "block";
   }
 
-  tablinks.forEach(button => {
-
+  tablinks.forEach((button, idx) => {
+     
     button.addEventListener("click", function() {
       const cityName = this.getAttribute("data-tab");
       openCity(cityName);
       this.classList.add("active");
-      window.scrollBy(0, 50);
+      // if (!hasScrolled) {
+      //   window.scrollBy(0, 250);
+      //   hasScrolled = true; // Після прокрутки міняємо стан
+      // }
+      
+      // const targetElement = document.getElementById('target');
+      // const scrollContainer = document.getElementById('scrollContainer');
+
+      // Get the dimensions of the target and container
+      const targetOffset = tabcontents[idx]?.offsetTop;
+      const containerHeight = tabcontents[idx]?.clientHeight;
+      
+      if (!targetOffset) return;
+      const scrollToPosition = targetOffset - (containerHeight / 2);
+      
+      window.scrollTo({
+          top: scrollToPosition,
+          behavior: 'smooth' // Optional for smooth scrolling
+      });
     });
   });
 
