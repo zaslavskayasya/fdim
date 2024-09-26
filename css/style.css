@@ -994,21 +994,26 @@ html, body {
 }
 .wrap-all-nomero .section1:hover{
   transform: translateY(-10px);
-  transition: all ease 0.3s;;
+  transition: all ease 0.3s;
 }
 .wrap-all-nomero .section2:hover{
   transform: translateY(-10px);
-  transition: all ease 0.3s;;
+  transition: all ease 0.3s;
 }
 .wrap-all-nomero .section3:hover{
   transform: translateY(-10px);
-  transition: all ease 0.3s;;
+  transition: all ease 0.3s;
 }
 
 /* .wrap-all-nomero .lightboxed{
   width: 50px;
   height: 50px;
 } */
+
+body :has(.lightboxed--frame.lightboxed--active) {
+  overflow: hidden;
+}
+
 .parking{
   position: absolute;
   bottom: 20%;

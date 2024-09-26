@@ -143,11 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
             top: this.offsetTop,
             behavior: 'smooth'
         });
-
       }
-      
-
-
     });
   });
 
@@ -446,3 +442,8 @@ if (window.innerWidth < 760) {
       observer.observe(element);
   });
 }
+
+// Lightboxed Start
+
+
+// Lightboxed end
