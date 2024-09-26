@@ -1040,16 +1040,13 @@ html, body {
 }
 
 .section2{
-
   position: absolute;
-
   bottom: 28%;
   left: 52%;
   cursor: pointer;
   width: 26%;
   height: 52%;
   background-image: url(../img/sec2.svg);
-
   transition: all ease 0.3s;  
   background-size: 50px 50px;
   background-repeat: no-repeat;
@@ -2270,6 +2267,15 @@ input.error {
   .contacts-block .container{
     padding-bottom: 80px;
 
+  }
+  .contact-item svg{
+    padding: 0px;
+  }
+  .main-contact-block{
+    right: 30px;
+  }
+  .main-contact-block .contact-item{
+    margin-bottom: 50px;;
   }
 }
 
