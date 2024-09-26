@@ -856,6 +856,7 @@ html, body {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
+  color: #858585;
 }
 
 /* Change background color of buttons on hover */
@@ -864,13 +865,20 @@ html, body {
   opacity: 1;
 }
 
+/* .tab .tablinks2[data-tab="one"]{
+  color: #000;
+} */
+
 .tab .tablinks2{
   color: #ccc;
-  transition: allease 0.3s;
+  transition: all ease 0.3s;
 }
+
 .tab .tablinks2:hover{
   color: #000;
 }
+
+
 
 
 /* Create an active/current tablink class */

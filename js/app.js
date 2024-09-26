@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function openCity(cityName) {
     tabcontents.forEach(content => content.style.display = "none");
-    tablinks.forEach(link => link.classList.remove("active"));
+    
     
     document.getElementById(cityName).style.display = "block";
   }
@@ -132,14 +132,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
   tablinks.forEach((button, idx) => {
     button.addEventListener("click", function() {
+      tablinks.forEach(link => link.classList.remove("active"));
       const cityName = this.dataset.tab;
       openCity(cityName);
       this.classList.add("active");
 
-      window.scrollTo({
-          top: this.offsetTop,
-          behavior: 'smooth'
-      });
+
+      if (window.innerWidth > 760) {
+        window.scrollTo({
+            top: this.offsetTop,
+            behavior: 'smooth'
+        });
+
+      }
+      
+
+
     });
   });
 
