@@ -2275,8 +2275,14 @@ input.error {
     right: 30px;
   }
   .main-contact-block .contact-item{
-    margin-bottom: 50px;;
+    margin-bottom: 50px;
   }
+  .about-section .wrap-texts .h2 {
+    margin-left: 18px;
+    margin-bottom: 32px;
+    font-size: 22px;
+    padding-left: 42px;
+}
 }
 
 
@@ -2293,11 +2299,7 @@ input.error {
 
     margin-right: 14px;
   }
-  .about-section .wrap-texts .h2 {
-    margin-left: 72px;
-    margin-bottom: 32px;
-    font-size: 22px;
-  }
+
   .about-section .wrap-texts .h2:before {
     width: 40px;
     height: 32px;
