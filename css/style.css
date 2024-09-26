@@ -2282,7 +2282,17 @@ input.error {
     margin-bottom: 32px;
     font-size: 22px;
     padding-left: 42px;
-}
+  }
+  .quality-section .icon-img {
+    width: 54px;
+    height: 47px;
+    margin-right: 25px;
+  }
+  .quality-header {
+    font-size: 20px;
+    margin-bottom: 23px;
+    margin: 0px 0px 16px 0px;
+  }
 }
 
 
