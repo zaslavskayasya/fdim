@@ -408,22 +408,33 @@ closeBtn.addEventListener('click', function() {
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
      .bindPopup('rue Menars');
 
-
-
 // Вибираємо всі елементи, які мають клас "hidden-element"
 const hiddenElements = document.querySelectorAll('.hidden-element');
 
-// Налаштовуємо Intersection Observer
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show'); // Додаємо клас, коли елемент видимий
-            observer.unobserve(entry.target); // Прибираємо спостерігач для цього елемента
-        }
-    });
-}, { threshold: 0.5 });
 
-// Спостерігаємо за кожним елементом
-hiddenElements.forEach(element => {
-    observer.observe(element);
-});
+
+
+// Перевіряємо, чи це мобільний пристрій (ширина вікна менше 760 пікселів)
+if (window.innerWidth < 760) {
+  // Вимикаємо анімацію: показуємо всі елементи без анімації
+  hiddenElements.forEach(element => {
+    element.classList.add('show'); // Додаємо клас, який зазвичай показується після анімації
+    element.classList.remove('hidden-element'); // Прибираємо прихований стан
+  });
+  // console.log("Анімація відключена для мобільних пристроїв");
+} else {
+  // Якщо це не мобільний пристрій, налаштовуємо Intersection Observer
+  const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add('show'); // Додаємо клас, коли елемент видимий
+              observer.unobserve(entry.target); // Прибираємо спостерігач для цього елемента
+          }
+      });
+  }, { threshold: 0.5 });
+
+  // Спостерігаємо за кожним елементом
+  hiddenElements.forEach(element => {
+      observer.observe(element);
+  });
+}
