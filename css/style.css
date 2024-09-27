@@ -934,13 +934,23 @@ html, body {
 }
 .design-tab {
   align-items: center;
+  position: relative;
 }
-.wrap-design{
+.wrap-design {
   width: 711px;
-  position: absolute;
+  height: 800px;
+  min-height: 814px;
+  /* position: absolute; */
+  float: right;
   right: 0px;
-  top: -80px
+  top: -80px;
+  object-fit: cover;
 }
+.room-im{
+  width: 990px;;
+  display: block;
+}
+
 .wrap-design img{
 
   width: 100%;
@@ -1914,10 +1924,24 @@ input.error {
   .tab-name:after{
     right: 75px;
   }
+  .room-im{
+    width: 890px;;
+
+  }
+}
+
+@media screen and (max-width: 1500px){
+  .room-im{
+    width: 700px;;
+ 
+  }
 }
 
 
 @media screen and (max-width: 1400px){
+  .design-tab {
+    align-items: baseline;
+  }
   .tab-name{
     font-size: 22px;
     max-width: 228px;
@@ -1953,7 +1977,16 @@ input.error {
 }
 
 @media screen and (max-width: 1200px){
-
+  .room-im{
+    width: 500px;
+  }
+  .wrap-design {
+    min-height: 500px; 
+    height: 647px;
+  }
+  .design-tab {
+    align-items: center;
+  }
   .quality-section{
     margin-bottom: 50px;
   }
@@ -2451,13 +2484,21 @@ input.error {
   .tabcontent2 {
     padding-top: 34px;
   }
-  .tabcontent2 .wrap-design{
-      margin: 50px auto 10px;
+  .tabcontent2 .wrap-design {
+    margin: 94px auto 10px;
+    float: none;
+  }
+  .wrap-design {
+    min-height: 300px;
+    height: 400px;
   }
   #section2 .h2-center {
     margin-bottom: 50px;
     margin-top: 84px;
     }
+    .room-im {
+      width: 100%;
+  }
     .numero-section .h2-center, 
     #section4 .h2-center,
     .container-f .h2-left{
