@@ -2574,6 +2574,22 @@ input.error {
 
 }
 
+@media screen and (max-width: 540px){
+  .auto-item {
+    width: 154px;
+    margin-bottom: 20px;
+  }
+  .tabs-section .norm-text {
+    margin-bottom: 23px;
+    padding: 0px 10px;
+    font-size: 13px;
+    line-height: 22px;
+  }
+  .icon-lpace {
+    margin-bottom: 5px;;
+  }
+}
+
 
 @media screen and (max-width: 390px){
   .big-phones {
