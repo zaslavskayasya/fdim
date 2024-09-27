@@ -2209,7 +2209,7 @@ input.error {
     margin-top: 20px;
   }
   .quality-second .three-item.middle-decors{
-    margin-bottom: 50px;
+    margin-bottom: 43px;
 
   }
   .list-of_pluses{
@@ -2332,6 +2332,16 @@ input.error {
   .tabcontent2 .wrap-design{
       margin: 50px auto 10px;
   }
+  #section2 .h2-center {
+    margin-bottom: 50px;
+    margin-top: 84px;
+    }
+    .numero-section .h2-center, 
+    #section4 .h2-center,
+    .container-f .h2-left{
+      padding-top: 20px; ;
+    }
+
 }
 
 
