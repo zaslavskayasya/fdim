@@ -2205,8 +2205,12 @@ input.error {
   margin-bottom: 35px;
   }
   .mob-image {
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     margin-top: 20px;
+  }
+  .quality-second .three-item.middle-decors{
+    margin-bottom: 50px;
+
   }
   .list-of_pluses{
     margin-top: 0px;
@@ -2250,10 +2254,13 @@ input.error {
     margin-bottom: 50px;
   }
   .quality-second{
-    margin-bottom: 50px;;
+    margin-bottom: 80px;;
   }
   .tab-content-wrap {
     padding-top: 30px;
+  }
+  #section3{
+    margin-bottom: 60px;;
   }
   .tabcontent{
     padding-left: 0px;
@@ -2305,6 +2312,25 @@ input.error {
     font-size: 20px;
     margin-bottom: 23px;
     margin: 0px 0px 16px 0px;
+  }
+  .text-map-part .overlay {
+    bottom: -29px;
+    z-index: 99999;
+  }
+  .map-wrap, #map {
+    pointer-events: none;
+  }
+  .tabs-section .tabcontent2 .design-tab .wrap-illustrate {
+    order: 0;
+    margin-bottom: 40px;
+    width: 100%;
+    transform: scale(1.3);
+  }
+  .tabcontent2 {
+    padding-top: 34px;
+  }
+  .tabcontent2 .wrap-design{
+      margin: 50px auto 10px;
   }
 }
 
