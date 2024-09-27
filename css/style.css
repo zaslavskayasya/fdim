@@ -963,6 +963,124 @@ html, body {
 }
 
 
+.gallery-wrap{
+  max-width: 100%;
+  height: 683px ;
+  background-image: url(../img/numero.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all ease 0.3s;
+  position: relative;
+}
+
+
+.gallery-wrap .parking{
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  cursor: pointer;
+  transition: all ease 0.3s; 
+  background-size: 50px 50px;
+  width: 50px ;
+  height: 50px;;
+  background-repeat: no-repeat;
+  background-image: url(../img/P.svg);
+}
+
+.gallery-wrap .sct1{
+  position: absolute;
+  display: block;
+  bottom: 18%;
+  left: 13%;
+  cursor: pointer;
+  background-image: url(../img/sec1.svg);
+  background-size: cover;
+  width: 40%;
+  height: 71%;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 10% 90%;
+  transition: all ease 0.3s;
+}
+
+
+.gallery-wrap .sct2{
+  position: absolute;
+  bottom: 28%;
+  left: 52%;
+  cursor: pointer;
+  width: 26%;
+  height: 52%;
+  background-image: url(../img/sec2.svg);
+  transition: all ease 0.3s;  
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 10% 90%;
+}
+
+.gallery-wrap .sct3{
+  /* border: 2px solid red; */
+  position: absolute;
+  bottom: 39%;
+  left: 78%;
+
+  width: 14%;
+  height: 35%;
+  cursor: pointer;
+  transition: all ease 0.3s; 
+  background-image: url(../img/sec3.svg);
+
+ 
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: 10% 90%;
+}
+
+
+
+
+.gallery-wrap:has(.sct1:hover) {
+  background-image: url(../img/render-min-section1.jpg);
+}
+
+.gallery-wrap:has(.sct2:hover) {
+  background-image: url(../img/render-min-section2.jpg);
+}
+
+.gallery-wrap:has(.sct3:hover) {
+  background-image: url(../img/render-min-section3.jpg);
+}
+
+
+
+.gallery-wrap .parking:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;;
+}
+
+.gallery-wrap .sct1{
+  transition: all ease 0.3s;
+}
+.gallery-wrap .sct1:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;
+}
+.gallery-wrap .sct2:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;
+}
+.gallery-wrap .sct3:hover{
+  transform: translateY(-10px);
+  transition: all ease 0.3s;
+}
+
+
+
+
+
+
+
 .wrap-all-nomero{
   position: relative;
 }
@@ -976,8 +1094,10 @@ html, body {
   background-repeat: no-repeat;
   background-position: relative;
   transition: all ease 0.3s;
-
 }
+
+
+
 
 .numero-section{
   padding-top: 50px;
@@ -1013,7 +1133,7 @@ html, body {
 body :has(.lightboxed--frame.lightboxed--active) {
   overflow: hidden;
 }
-
+/* 
 .parking{
   position: absolute;
   bottom: 20%;
@@ -1026,7 +1146,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
   width: 50px ;
   height: 50px;;
   background-repeat: no-repeat;
-}
+} */
 
 .section1{
 
@@ -1791,6 +1911,9 @@ input.error {
     margin-left: 50px;
     margin-top: 65px;
   }
+  .tab-name:after{
+    right: 75px;
+  }
 }
 
 
@@ -1954,7 +2077,7 @@ input.error {
       width: 100%;
       margin-left: 0px;;
     }
-    .wrap-all-nomero {
+    .wrap-all-nomero, .gallery-wrap {
       max-width: 100%;
       height: 583px;
     }
@@ -2233,15 +2356,14 @@ input.error {
   .tabs-section .norm-text{
     margin-bottom: 23px;
   }
-  .wrap-all-nomero {
+  .wrap-all-nomero, .gallery-wrap {
     max-width: 100%;
     height: 304px;
   }
-  .parking {
-
-    left: 4%;
+  .gallery-wrap .parking {
+    left: 2%;
   }
-  .section1, .section2, .section3, .parking{
+  .gallery-wrap .sct1, .gallery-wrap .sct2, .gallery-wrap .sct3, .gallery-wrap .parking{
     background-size: 35px 35px;
   }
   input{
