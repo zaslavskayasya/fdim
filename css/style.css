@@ -517,7 +517,7 @@ html, body {
 .socials{
     display: flex;
     justify-content: space-between;
-    max-width: 271px;
+    max-width: 170px;
     align-items: center;
     margin: 0 auto;
 }
