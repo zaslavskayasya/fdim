@@ -2274,8 +2274,7 @@ input.error {
   .text-map-part .overlay {
     height: 80px;
     bottom: -55px;
-    top: 77%;
-    
+    top: 77%;   
   }
   .line-with-btn {
     position: absolute;
