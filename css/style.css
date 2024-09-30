@@ -1947,19 +1947,19 @@ input.error {
 @media (max-width: 768px) {
   
 .parallax-window{
-  background-image: url(/img/parallax.jpg);
+  background-image: url(img/parallax.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .parallax-window2{
-  background-image: url(/img/large-parallax.jpg);
+  background-image: url(img/large-parallax.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .parallax-window3{
-  background-image: url(/img/numero.jpg);
+  background-image: url(img/numero.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
