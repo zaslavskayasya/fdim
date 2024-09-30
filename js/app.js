@@ -447,3 +447,9 @@ if (window.innerWidth < 760) {
 
 
 // Lightboxed end
+
+$('.parallax-window').parallax({imageSrc: '../img/parallax.jpg'});
+
+$('.parallax-window2').parallax({imageSrc: '../img/large-parallax.jpg'});
+
+$('.parallax-window3').parallax({imageSrc: '../img/numero.jpg'});
