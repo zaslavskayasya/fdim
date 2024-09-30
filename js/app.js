@@ -449,7 +449,7 @@ if (window.innerWidth < 760) {
 
 let rembg1  = document.querySelector('.parallax-block');
 let rembg2  = document.querySelector('.ecsclisice-parallax');
-let rembg3  = document.querySelector('.ecsclisice-parallax');
+let rembg3  = document.querySelector('.ecsclisice-parallax2');
 
 
 
@@ -484,7 +484,15 @@ function detectDeviceAndBrowser() {
 // detectDeviceAndBrowser();
 
 if(detectDeviceAndBrowser()){
-  rembg1.style.backgroundAttachment = '';
-  rembg2.style.backgroundAttachment = '';
-  rembg3.style.backgroundAttachment = '';
+  rembg1.style.backgroundAttachment = 'unset';
+  rembg2.style.backgroundAttachment = 'unset';
+  rembg3.style.backgroundAttachment = 'unset';
 }
+
+
+
+
+
+// rembg1.style.removeProperty('background-attachment');
+// rembg2.style.removeProperty('background-attachment');
+// rembg3.style.removeProperty('background-attachment');
