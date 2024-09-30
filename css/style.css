@@ -1296,8 +1296,8 @@ body :has(.lightboxed--frame.lightboxed--active) {
 }
 
 .wrap-left-img{
-  max-width: 710px;
-  width: 710px;
+  /* max-width: 710px; */
+  /* width: 710px; */
   overflow: hidden;
   height: 929px;
   object-fit: cover;
@@ -1580,6 +1580,7 @@ input:focus {
   padding-left: 140px;
   font-weight: 600;
   transition: all ease 0.3s;
+  color: #000
 }
 
 .arrow {
