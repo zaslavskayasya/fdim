@@ -451,9 +451,9 @@ if (window.innerWidth < 760) {
 
 function applyParallax() {
   if (window.innerWidth > 768) {
-      $('.parallax-window').parallax({imageSrc: '../img/parallax.jpg'});
-      $('.parallax-window2').parallax({imageSrc: '../img/large-parallax.jpg'});
-      $('.parallax-window3').parallax({imageSrc: '../img/numero.jpg'});
+      $('.parallax-window').parallax({imageSrc: 'img/parallax.jpg'});
+      $('.parallax-window2').parallax({imageSrc: 'img/large-parallax.jpg'});
+      $('.parallax-window3').parallax({imageSrc: 'img/numero.jpg'});
   }
 }
 
