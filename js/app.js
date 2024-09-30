@@ -404,13 +404,15 @@ closeBtn.addEventListener('click', function() {
      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
  }).addTo(map);
 
- // Додавання першої точки з підказкою
- let marker1 = L.marker([46.40173615458889, 30.745479427813507]).addTo(map)
-     .bindPopup('Офіс "familny dim" ').openPopup();
+//  46.40140935049765, 30.74555861328353
 
+ // Додавання першої точки з підказкою
+ let marker1 = L.marker([ 46.40140935049765, 30.74555861328353]).addTo(map)
+ .bindPopup('Офіс "familny dim" ').openPopup();
+ 
  // Додавання другої точки з підказкою
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
-     .bindPopup('rue Menars');
+ .bindPopup('rue Menars');
 
 // Вибираємо всі елементи, які мають клас "hidden-element"
 const hiddenElements = document.querySelectorAll('.hidden-element');
@@ -446,10 +448,20 @@ if (window.innerWidth < 760) {
 // Lightboxed Start
 
 
-// Lightboxed end
 
-$('.parallax-window').parallax({imageSrc: '../img/parallax.jpg'});
+function applyParallax() {
+  if (window.innerWidth > 768) {
+      $('.parallax-window').parallax({imageSrc: '../img/parallax.jpg'});
+      $('.parallax-window2').parallax({imageSrc: '../img/large-parallax.jpg'});
+      $('.parallax-window3').parallax({imageSrc: '../img/numero.jpg'});
+  }
+}
 
-$('.parallax-window2').parallax({imageSrc: '../img/large-parallax.jpg'});
 
-$('.parallax-window3').parallax({imageSrc: '../img/numero.jpg'});
+
+$(window).on('resize', function() {
+  applyParallax();
+});
+
+// Викликаємо функцію при завантаженні сторінки
+applyParallax();

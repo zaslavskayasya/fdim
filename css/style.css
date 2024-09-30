@@ -652,7 +652,24 @@ html, body {
 .parallax-window {
   min-height: 400px;
   background: transparent;
+  margin-bottom:  120px;;
 }
+
+.parallax-window2 {
+  min-height: 400px;
+  background: transparent;
+} 
+
+
+.parallax-window3 {
+  min-height: 400px;
+  background: transparent;
+} 
+
+
+
+
+
 .parallax-block {
   /* The image used */
   background-image: url(../img/parallax.jpg);
@@ -680,16 +697,7 @@ html, body {
   min-width:100%;
 }
 
-.parallax-window2 {
-  min-height: 400px;
-  background: transparent;
-} 
 
-
-.parallax-window3 {
-  min-height: 400px;
-  background: transparent;
-} 
 .ecsclisice-parallax, .ecsclisice-parallax2{
   background-image: url(../img/large-parallax.jpg);
   min-height: 480px;
@@ -743,6 +751,9 @@ html, body {
 .quality-section{
     margin-bottom: 126px ;
 }
+
+
+
 .quality-header{
   font-weight: 500;
   color: #89744F;
@@ -1694,7 +1705,12 @@ input:focus {
     width: 100%;
     background-size: cover;
     max-height: 500px;
-    background-attachment: fixed;
+    height: 500px;
+    background-attachment: none;
+  }
+  .overlay{
+    top: 39px;
+    bottom: auto;
   }
   .right-side {
       position: relative;
@@ -1929,6 +1945,25 @@ input.error {
 
 
 @media (max-width: 768px) {
+  
+.parallax-window{
+  background-image: url(../img/parallax.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parallax-window2{
+  background-image: url(../img/large-parallax.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.parallax-window3{
+  background-image: url(../img/numero.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
   .contacts-info, .contacts-form {
       width: 100%;
   }
@@ -2117,6 +2152,10 @@ input.error {
 }
 
 @media screen and (max-width: 1024px){
+  .parallax-window {
+
+    margin-bottom:  80px;;
+  }
   .not-parallax-section{
     height: 290px;
   }
@@ -2220,14 +2259,23 @@ input.error {
     .tabs-section{
       margin-bottom: 50px;;
     }
+    .maps-section{
+      height: 493px;
+    }
     .map-wrap{
-      position: relative;
+      /* position: relative; */
       width: 100%;
     }
     .text-map-part {
       max-width: 100%;
       padding-bottom: 100px;
       height: auto;
+  }
+  .text-map-part .overlay {
+    height: 80px;
+    bottom: -55px;
+    top: 77%;
+    
   }
   .line-with-btn {
     position: absolute;
@@ -2618,6 +2666,11 @@ input.error {
       height: 60px;
     }
 
+    .parallax-window2, .parallax-window3 {
+      min-height: 264px;
+      
+    }
+
 }
 
 @media screen and (max-width: 540px){
@@ -2627,9 +2680,12 @@ input.error {
   }
   .tabs-section .norm-text {
     margin-bottom: 23px;
-    padding: 0px 10px;
+    padding: 0px 30px;
     font-size: 13px;
     line-height: 22px;
+  }
+  .tabs-section  .list-of_pluses li {
+    background-position: 0px 4px;
   }
   .icon-lpace {
     margin-bottom: 5px;;
