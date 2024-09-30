@@ -942,7 +942,7 @@ html, body {
 
 
 .tabs-section{
-  /* margin-top: -200px; */
+  margin-top: -200px;
 }
 
 .tab-content-wrap{
@@ -2140,7 +2140,7 @@ input.error {
     margin-bottom: 70px;
   }
   .tabs-section {
-    /* margin-top: -228px; */
+    margin-top: -228px;
   }
   .big-phones {
     font-size: 42px;
@@ -2413,7 +2413,7 @@ input.error {
     padding: 25px 20px
   }
   .tabs-section {
-    /* margin-top: -353px; */
+    margin-top: -353px;
   }
   .wrap-copy-info{
     flex-direction: column;
@@ -2522,7 +2522,7 @@ input.error {
     margin-bottom: 10px;
   }
   .tabs-section {
-    /* margin-top: -297px; */
+    margin-top: -297px;
   }
   .numero{
     font-size: 10px;

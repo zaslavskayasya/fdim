@@ -447,21 +447,44 @@ if (window.innerWidth < 760) {
 
 // Lightboxed Start
 
+let rembg1  = document.querySelector('.parallax-block');
+let rembg2  = document.querySelector('.ecsclisice-parallax');
+let rembg3  = document.querySelector('.ecsclisice-parallax');
 
 
-function applyParallax() {
-  if (window.innerWidth > 768) {
-      $('.parallax-window').parallax({imageSrc: 'img/parallax.jpg'});
-      $('.parallax-window2').parallax({imageSrc: 'img/large-parallax.jpg'});
-      $('.parallax-window3').parallax({imageSrc: 'img/numero.jpg'});
+
+function detectDeviceAndBrowser() {
+  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Проверка Android
+  const androidMatch = userAgent.match(/Android\s([0-9.]*)/);
+  const androidVersion = androidMatch ? androidMatch[1] : false;
+
+  if (androidVersion) {
+    console.log(`Устройство на Android, версия: ${androidVersion}`);
+    if (parseFloat(androidVersion) < 8) {
+      return true;
+    }
   }
+
+  // Проверка Opera Mini
+  if (userAgent.includes("Opera Mini")) {
+    return true;
+  }
+
+  // Проверка iPhone или iPad
+  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+  if (isIOS) {
+    return true;
+  }
+
+  return false;
 }
 
+// detectDeviceAndBrowser();
 
-
-$(window).on('resize', function() {
-  applyParallax();
-});
-
-// Викликаємо функцію при завантаженні сторінки
-applyParallax();
+if(detectDeviceAndBrowser()){
+  rembg1.style.backgroundAttachment = '';
+  rembg2.style.backgroundAttachment = '';
+  rembg3.style.backgroundAttachment = '';
+}
