@@ -450,7 +450,7 @@ if (window.innerWidth < 760) {
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
 
-  let movementFactor = 1;
+  let movementFactor = 1.2;
   let backgrounds = gsap.utils.toArray(".parallax img.bg");
   
   backgrounds.forEach((img, i) => {
@@ -461,13 +461,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
       // the first image (i === 0) should be handled differently because it should start at the very top.
       // use function-based values in order to keep things responsive
       gsap.fromTo(img, {
-        y: () => i ? -movementFactor * 0.4 * img.parentNode.offsetHeight : 0
+        y: () => -movementFactor * 0.5 * img.parentNode.offsetHeight
       }, {
         y: () => movementFactor * 0.5 * img.parentNode.offsetHeight,
         ease: "none",
         scrollTrigger: {
           trigger: img.parentNode,
-          start: () => i ? "top bottom" : "center bottom", 
+          start: () => i ? "top bottom" : "-1px bottom", 
           end: "bottom top",
           scrub: true,
           invalidateOnRefresh: true // to make it responsive
