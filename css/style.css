@@ -1332,7 +1332,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 
 .maps-section{
   position: relative;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 .text-map-part{
@@ -1385,7 +1385,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 
 .map-wrap{
   position: absolute;
-  right: -17px;
+  right: 0px;
   top: 0px;
   height:760px;
   width: 1000px;
@@ -2000,7 +2000,7 @@ input.error {
     padding-left: 8%
   }
   .map-wrap {
-    width: 812px;
+    width: 796px;
   }
   .text-map-part .overlay{
     right: 380px;
