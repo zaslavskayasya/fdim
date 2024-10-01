@@ -394,7 +394,7 @@ h1.show{
 }
 
 .main-screen{
-  background-image: url(../img/main-bg.jpg);
+  background-image: url(../img/main-bg.webp);
   background-position: center center;
   background-size: cover;
   min-height: 920px;
@@ -672,7 +672,7 @@ html, body {
 
 .parallax-block {
   /* The image used */
-  background-image: url(../img/parallax.jpg);
+  background-image: url(../img/parallax.webp);
 
   /* Set a specific height */
   min-height: 480px;
@@ -699,7 +699,7 @@ html, body {
 
 
 .ecsclisice-parallax, .ecsclisice-parallax2{
-  background-image: url(../img/large-parallax.jpg);
+  background-image: url(../img/large-parallax.webp);
   min-height: 480px;
   background-attachment: fixed;
   background-position: center;
@@ -709,7 +709,7 @@ html, body {
 }
 
 .ecsclisice-parallax2{
-  background-image: url(../img/numero.jpg);
+  background-image: url(../img/numero.webp);
 }
 
 .h2-center, .h2-left{
@@ -788,7 +788,7 @@ html, body {
 }
 
 .not-parallax-section{
-  background-image: url(../img/2-pics.jpg);
+  background-image: url(../img/2-pics.webp);
   background-size: cover;
   background-position: center;
   height: 550px;
@@ -1017,7 +1017,7 @@ html, body {
 .gallery-wrap{
   max-width: 100%;
   height: 683px ;
-  background-image: url(../img/numero.jpg);
+  background-image: url(../img/numero.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1092,15 +1092,15 @@ html, body {
 
 
 .gallery-wrap:has(.sct1:hover) {
-  background-image: url(../img/render-min-section1.jpg);
+  background-image: url(../img/render-min-section1.webp);
 }
 
 .gallery-wrap:has(.sct2:hover) {
-  background-image: url(../img/render-min-section2.jpg);
+  background-image: url(../img/render-min-section2.webp);
 }
 
 .gallery-wrap:has(.sct3:hover) {
-  background-image: url(../img/render-min-section3.jpg);
+  background-image: url(../img/render-min-section3.webp);
 }
 
 
@@ -1139,7 +1139,7 @@ html, body {
 .wrap-all-nomero{
   max-width: 100%;
   height: 683px ;
-  background-image: url(../img/numero.jpg);
+  background-image: url(../img/numero.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1220,7 +1220,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 
 
 .wrap-all-nomero:has(.section1:hover) {
-  background-image: url(../img/render-min-section1.jpg);
+  background-image: url(../img/render-min-section1.webp);
 }
 
 .section2{
@@ -1238,7 +1238,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 }
 
 .wrap-all-nomero:has(.section2:hover) {
-  background-image: url(../img/render-min-section2.jpg);
+  background-image: url(../img/render-min-section2.webp);
 }
 
 
@@ -1261,7 +1261,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 }
 
 .wrap-all-nomero:has(.section3:hover) {
-  background-image: url(../img/render-min-section3.jpg);
+  background-image: url(../img/render-min-section3.webp);
 }
 
 
@@ -1301,7 +1301,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
   overflow: hidden;
   height: 929px;
   object-fit: cover;
-  background-image: url(../img/form-picture.jpg);
+  background-image: url(../img/form-picture.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1949,19 +1949,19 @@ input.error {
 @media (max-width: 768px) {
   
 .parallax-window{
-  background-image: url(../img/parallax.jpg);
+  background-image: url(../img/parallax.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .parallax-window2{
-  background-image: url(../img/large-parallax.jpg);
+  background-image: url(../img/large-parallax.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .parallax-window3{
-  background-image: url(../img/numero.jpg);
+  background-image: url(../img/numero.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2068,7 +2068,7 @@ input.error {
     height: 350px;
   }
   .design-tab {
-    align-items: baseline;
+    align-items: center;
   }
   .tab-name{
     font-size: 22px;
@@ -2163,8 +2163,13 @@ input.error {
   }
   .wrap-design {
     width: 400px;
+    height: 500px;;
     position: relative;
+    margin: 94px auto 10px;
 
+  }
+  .tabs-section .part-item{
+    width: 400px;;
   }
   .tabcontent2 .wrap-illustrate .roomimg{
     margin-top: 0px;
@@ -2455,6 +2460,9 @@ input.error {
 }
 
 @media screen and (max-width: 760px){
+  .main-screen{
+    background-image: url(../img/main-bg-mob.webp);
+  }
 
   .h1 {
     font-size: 98px;

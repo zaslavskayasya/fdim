@@ -408,7 +408,7 @@ closeBtn.addEventListener('click', function() {
 
  // Додавання першої точки з підказкою
  let marker1 = L.marker([ 46.40140935049765, 30.74555861328353]).addTo(map)
- .bindPopup('Офіс "familny dim" ').openPopup();
+ .bindPopup('Фамільний дім - офіс').openPopup();
  
  // Додавання другої точки з підказкою
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
