@@ -406,90 +406,73 @@ closeBtn.addEventListener('click', function() {
 
 //  46.40140935049765, 30.74555861328353
 
- // Додавання першої точки з підказкою
  let marker1 = L.marker([ 46.40140935049765, 30.74555861328353]).addTo(map)
  .bindPopup('Фамільний дім - офіс').openPopup();
  
- // Додавання другої точки з підказкою
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
  .bindPopup('RUE MÉNARS');
 
-// Вибираємо всі елементи, які мають клас "hidden-element"
 const hiddenElements = document.querySelectorAll('.hidden-element');
 
 
-
-
-// Перевіряємо, чи це мобільний пристрій (ширина вікна менше 760 пікселів)
 if (window.innerWidth < 760) {
-  // Вимикаємо анімацію: показуємо всі елементи без анімації
   hiddenElements.forEach(element => {
-    element.classList.add('show'); // Додаємо клас, який зазвичай показується після анімації
-    element.classList.remove('hidden-element'); // Прибираємо прихований стан
+    element.classList.add('show');
+    element.classList.remove('hidden-element');
   });
-  // console.log("Анімація відключена для мобільних пристроїв");
 } else {
-  // Якщо це не мобільний пристрій, налаштовуємо Intersection Observer
   const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-              entry.target.classList.add('show'); // Додаємо клас, коли елемент видимий
-              observer.unobserve(entry.target); // Прибираємо спостерігач для цього елемента
+              entry.target.classList.add('show');
+              observer.unobserve(entry.target);
           }
       });
   }, { threshold: 0.5 });
 
-  // Спостерігаємо за кожним елементом
   hiddenElements.forEach(element => {
       observer.observe(element);
   });
 }
 
-// Lightboxed Start
-
-document.addEventListener("DOMContentLoaded", (event) => {
+// Parallax start
+document.addEventListener("DOMContentLoaded", event => {
   gsap.registerPlugin(ScrollTrigger);
-
-  let movementFactor = 1.2;
   let backgrounds = gsap.utils.toArray(".parallax img.bg");
-  
   backgrounds.forEach((img, i) => {
-    img.addEventListener("load", () => { // wait until the image loads because we need to ascertain the naturalWidth/naturalHeight
-      
-      fitImage(img, movementFactor);
-      
-      // the first image (i === 0) should be handled differently because it should start at the very top.
-      // use function-based values in order to keep things responsive
+    img.addEventListener("load", () => {
+      fitImage(img);
       gsap.fromTo(img, {
-        y: () => -movementFactor * 0.5 * img.parentNode.offsetHeight
+        y: () => -img.parentNode.offsetHeight * 1.7
       }, {
-        y: () => movementFactor * 0.5 * img.parentNode.offsetHeight,
+        y: () => img.parentNode.offsetHeight * 1.7,
         ease: "none",
         scrollTrigger: {
           trigger: img.parentNode,
-          start: () => i ? "top bottom" : "-1px bottom", 
+          start: "top bottom", 
           end: "bottom top",
           scrub: true,
-          invalidateOnRefresh: true // to make it responsive
+          invalidateOnRefresh: true
         }
       });
-    })
+    });
     
-    // Give the backgrounds some random images
     img.setAttribute("src", img.dataset.src);
-  
   });
   
-  // whenever the window resizes, we should adjust the backgrounds to fit properly.
-  window.addEventListener("resize", () => backgrounds.forEach(img => fitImage(img, movementFactor)));
-  
-  // fits the image into the parent proportionally while ensuring there's enough of a margin for the vertical movement.
-  function fitImage(img, marginFactor) {
-    let sx = img.parentNode.offsetWidth / img.naturalWidth,
-        sy = img.parentNode.offsetHeight * (1 + Math.abs(marginFactor)) / img.naturalHeight,
-        scale = Math.max(sx, sy),
-        w = Math.ceil(img.naturalWidth * scale),
-        h = Math.ceil(img.naturalHeight * scale);
-    gsap.set(img, {width: w, height: h, top: Math.ceil((img.parentNode.offsetHeight - h) / 2), left: Math.ceil((img.parentNode.offsetWidth - w) / 2), position: "absolute"});
+  window.addEventListener("resize", () => backgrounds.forEach(img => fitImage(img)));
+
+  function fitImage(img) {
+    let w = Math.ceil(img.naturalWidth),
+        h = Math.ceil(img.naturalHeight);
+    
+    gsap.set(img, {
+      top: Math.ceil((img.parentNode.offsetHeight - h) / 2),
+      left: Math.ceil((img.parentNode.offsetWidth - w) / 2),
+      width: "100wv",
+      height: "100vv",
+      position: "absolute"
+    });
   }
 });
+// Parallax end

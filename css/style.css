@@ -674,7 +674,7 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  min-height: 700px;
+  min-height: 600px;
   margin-bottom: 98px;
   /* background-attachment: fixed; */
   /* background-position: center;
@@ -682,15 +682,14 @@ html, body {
   background-size: cover; */
 }
 
-@media  screen and (max-width: 1980px) {
+@media screen and (max-width: 1980px) {
   .parallax {
     min-height: 600px;
   }
 }
 
-
-
 img.bg {
+  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -2200,13 +2199,7 @@ input.error {
     .about-section .about-img-wrap{
       margin: 0 auto 30px;
     }
-    .about-section{
 
-    }
-    .parallax-block{
-      min-height: 298px ;
-      background-position: 90%;
-    }
     .quality-section .three-part .three-item {
       width: 100%;
     }
@@ -2559,9 +2552,6 @@ input.error {
   }
   .about-section .three-part {
     margin-bottom: 30px;
-  }
-  .parallax-block{
-    margin-bottom: 50px;
   }
   .quality-second{
     margin-bottom: 80px;;
