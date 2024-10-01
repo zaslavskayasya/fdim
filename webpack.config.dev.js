@@ -11,5 +11,6 @@ module.exports = merge(common, {
     static: ['./'],
     host: '0.0.0.0',
     port: 80,
+    allowedHosts: "all",
   },
 });

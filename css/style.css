@@ -674,13 +674,21 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  min-height: 480px;
+  min-height: 700px;
   margin-bottom: 98px;
   /* background-attachment: fixed; */
   /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
 }
+
+@media  screen and (max-width: 1980px) {
+  .parallax {
+    min-height: 600px;
+  }
+}
+
+
 
 img.bg {
   position: absolute;
@@ -689,17 +697,6 @@ img.bg {
   z-index: -1;
 }
 
-.parsec-1 {
-  /* background-image: url(../img/parallax.webp); */
-}
-
-.parsec-2 {
-  /* background-image: url(../img/large-parallax.webp); */
-}
-
-.parsec-3 {
-  /* background-image: url(../img/numero.webp); */
-}
 
 .paralax-image {
   overflow: hidden;
@@ -2690,7 +2687,7 @@ input.error {
   }
   .tabs-section .norm-text {
     margin-bottom: 23px;
-    padding: 0px 30px;
+    padding: 0px 3px;
     font-size: 13px;
     line-height: 22px;
   }
@@ -2746,18 +2743,15 @@ input.error {
   .sidenav a {font-size: 18px;}
 }
 
-
-/* @media screen and (min-height: 913px){
-  h1.show {
-    opacity: 1;
-    transform: rotate(180deg) translateY(137px);
-}
+@media screen and (max-width: 1600px) and (max-height: 900px) {
+  .main-screen {
+    min-height: 850px;
+  }
 }
 
 
-@media screen and (min-height: 1100px){
-  h1.show {
-    opacity: 1;
-    transform: rotate(180deg) translateY(337px);
+@media screen and (max-width: 1600px) and (max-height: 800px) {
+  .main-screen {
+    min-height: 750px;
+  }
 }
-} */

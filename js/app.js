@@ -412,7 +412,7 @@ closeBtn.addEventListener('click', function() {
  
  // Додавання другої точки з підказкою
  let marker2 = L.marker([46.410190957004886, 30.72848776143575]).addTo(map)
- .bindPopup('rue Menars');
+ .bindPopup('RUE MÉNARS');
 
 // Вибираємо всі елементи, які мають клас "hidden-element"
 const hiddenElements = document.querySelectorAll('.hidden-element');
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       // the first image (i === 0) should be handled differently because it should start at the very top.
       // use function-based values in order to keep things responsive
       gsap.fromTo(img, {
-        y: () => i ? -movementFactor * 0.8 * img.parentNode.offsetHeight : 0
+        y: () => i ? -movementFactor * 0.4 * img.parentNode.offsetHeight : 0
       }, {
         y: () => movementFactor * 0.5 * img.parentNode.offsetHeight,
         ease: "none",
