@@ -1330,7 +1330,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
 
 .maps-section{
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .text-map-part{
