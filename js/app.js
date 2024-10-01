@@ -447,52 +447,49 @@ if (window.innerWidth < 760) {
 
 // Lightboxed Start
 
-let rembg1  = document.querySelector('.parallax-block');
-let rembg2  = document.querySelector('.ecsclisice-parallax');
-let rembg3  = document.querySelector('.ecsclisice-parallax2');
+document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger);
 
-
-
-function detectDeviceAndBrowser() {
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-  // Проверка Android
-  const androidMatch = userAgent.match(/Android\s([0-9.]*)/);
-  const androidVersion = androidMatch ? androidMatch[1] : false;
-
-  if (androidVersion) {
-    console.log(`Устройство на Android, версия: ${androidVersion}`);
-    if (parseFloat(androidVersion) < 8) {
-      return true;
-    }
+  let movementFactor = 1;
+  let backgrounds = gsap.utils.toArray(".parallax img.bg");
+  
+  backgrounds.forEach((img, i) => {
+    img.addEventListener("load", () => { // wait until the image loads because we need to ascertain the naturalWidth/naturalHeight
+      
+      fitImage(img, movementFactor);
+      
+      // the first image (i === 0) should be handled differently because it should start at the very top.
+      // use function-based values in order to keep things responsive
+      gsap.fromTo(img, {
+        y: () => i ? -movementFactor * 0.8 * img.parentNode.offsetHeight : 0
+      }, {
+        y: () => movementFactor * 0.5 * img.parentNode.offsetHeight,
+        ease: "none",
+        scrollTrigger: {
+          trigger: img.parentNode,
+          start: () => i ? "top bottom" : "center bottom", 
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true // to make it responsive
+        }
+      });
+    })
+    
+    // Give the backgrounds some random images
+    img.setAttribute("src", img.dataset.src);
+  
+  });
+  
+  // whenever the window resizes, we should adjust the backgrounds to fit properly.
+  window.addEventListener("resize", () => backgrounds.forEach(img => fitImage(img, movementFactor)));
+  
+  // fits the image into the parent proportionally while ensuring there's enough of a margin for the vertical movement.
+  function fitImage(img, marginFactor) {
+    let sx = img.parentNode.offsetWidth / img.naturalWidth,
+        sy = img.parentNode.offsetHeight * (1 + Math.abs(marginFactor)) / img.naturalHeight,
+        scale = Math.max(sx, sy),
+        w = Math.ceil(img.naturalWidth * scale),
+        h = Math.ceil(img.naturalHeight * scale);
+    gsap.set(img, {width: w, height: h, top: Math.ceil((img.parentNode.offsetHeight - h) / 2), left: Math.ceil((img.parentNode.offsetWidth - w) / 2), position: "absolute"});
   }
-
-  // Проверка Opera Mini
-  if (userAgent.includes("Opera Mini")) {
-    return true;
-  }
-
-  // Проверка iPhone или iPad
-  const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
-  if (isIOS) {
-    return true;
-  }
-
-  return false;
-}
-
-// detectDeviceAndBrowser();
-
-if(detectDeviceAndBrowser()){
-  rembg1.style.backgroundAttachment = 'unset';
-  rembg2.style.backgroundAttachment = 'unset';
-  rembg3.style.backgroundAttachment = 'unset';
-}
-
-
-
-
-
-// rembg1.style.removeProperty('background-attachment');
-// rembg2.style.removeProperty('background-attachment');
-// rembg3.style.removeProperty('background-attachment');
+});

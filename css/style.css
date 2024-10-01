@@ -667,22 +667,38 @@ html, body {
 } 
 
 
-
-
-
-.parallax-block {
-  /* The image used */
-  background-image: url(../img/parallax.webp);
-
-  /* Set a specific height */
+.parallax {
+  position: relative;
+  /* height: 60vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   min-height: 480px;
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   margin-bottom: 98px;
+  /* background-attachment: fixed; */
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+img.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.parsec-1 {
+  /* background-image: url(../img/parallax.webp); */
+}
+
+.parsec-2 {
+  /* background-image: url(../img/large-parallax.webp); */
+}
+
+.parsec-3 {
+  /* background-image: url(../img/numero.webp); */
 }
 
 .paralax-image {
@@ -695,21 +711,6 @@ html, body {
   position: absolute;
   height: 100vh;
   min-width:100%;
-}
-
-
-.ecsclisice-parallax, .ecsclisice-parallax2{
-  background-image: url(../img/large-parallax.webp);
-  min-height: 480px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-bottom: 98px;
-}
-
-.ecsclisice-parallax2{
-  background-image: url(../img/numero.webp);
 }
 
 .h2-center, .h2-left{
@@ -1344,8 +1345,7 @@ body :has(.lightboxed--frame.lightboxed--active) {
   bottom: 203px;
   z-index: 999;
   padding: 23px 58px 17px 66px;
-  right: 567px;
-
+  right: 586px;
 }
 
 
@@ -2092,7 +2092,7 @@ input.error {
     width: 612px;
   }
   .text-map-part .overlay {
-    right: 180px;
+    right: 196px;
   }
   .tab.tab2 {
     width: 85%;
