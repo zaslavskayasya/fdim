@@ -1042,7 +1042,7 @@ img.bg {
   bottom: 18%;
   left: 13%;
   cursor: pointer;
-  background-image: url(../img/sec1.svg);
+  background-image: url(../img/sec3.svg);
   background-size: cover;
   width: 40%;
   height: 71%;
@@ -1077,7 +1077,7 @@ img.bg {
   height: 35%;
   cursor: pointer;
   transition: all ease 0.3s; 
-  background-image: url(../img/sec3.svg);
+  background-image: url(../img/sec1.svg);
 
  
   background-size: 50px 50px;
