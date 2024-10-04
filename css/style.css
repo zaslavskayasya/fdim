@@ -370,9 +370,8 @@ h1.show{
 
 .link-button{
   display: block;
-  position: absolute;
- 
-  background-color: #fff ;
+  position: absolute; 
+  background-color: #f9e4c5;
   color: #000;
   font-size: 14px;
   border-radius: 70px;
@@ -416,14 +415,14 @@ h1.show{
 }
 
 .link-button:hover{
-  background-color: #000;
-  color: #fff;
+  background-color:#f4b04b;
+  /* color: #fff; */
 }
 
-.link-button:hover svg path{
+/* .link-button:hover svg path{
   fill: #fff;
 }
-
+ */
 
 
 
