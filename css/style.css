@@ -368,6 +368,62 @@ h1.show{
 
 
 
+.link-button{
+  display: block;
+  position: absolute;
+ 
+  background-color: #fff ;
+  color: #000;
+  font-size: 14px;
+  border-radius: 70px;
+  padding: 20px 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all ease 0.3s;
+  box-sizing: border-box;
+}
+
+.link-button.top-button{
+  left: 0%;
+  margin-left: 128px;
+  bottom: 20%;
+}
+
+.link-button.bottom-button{
+  right: 0%;
+  margin-right: 90px;
+  bottom: 8%;
+}
+
+.link-button svg{
+  margin-left: 10px;
+  margin-top:-2px;
+  transition: all ease 0.3s;
+  animation: moveArrow2 1.5s linear infinite;
+}
+
+
+@keyframes moveArrow2 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.link-button:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+.link-button:hover svg path{
+  fill: #fff;
+}
+
 
 
 
@@ -2323,9 +2379,14 @@ input.error {
 }
 
 @media screen and (max-width: 960px){
+  .link-button.top-button{
+    left: 0%;
+    margin-left: 28px;
+    bottom: 20%;
+  }
   .wrap-auto-icons {
     padding-top: 30px;
-}
+  }
   .sidenav.open {
     width: 600px;
   }
@@ -2454,7 +2515,29 @@ input.error {
   .main-screen{
     background-image: url(../img/main-bg-mob.webp);
   }
+  .link-button.bottom-button{
+    padding: 10px 15px;
+    font-size: 12px;
+    margin-right: 20px;
 
+  }
+  .link-button.bottom-button svg{
+    margin-left:0px;
+
+  }
+  .link-button.top-button {
+    left: 0%;
+    margin-left: 28px;
+    bottom: 49px;
+    padding: 10px 20px;
+    font-size: 12px;
+    left: 65px;
+    margin: 0;
+    transform: rotate(-90deg);
+    transform-origin: left;
+    margin-lrft: 20px;
+    margin-top: 13px;
+  }
   .h1 {
     font-size: 98px;
   }
