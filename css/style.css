@@ -366,9 +366,27 @@ h1.show{
   transform: translateY(0);
 }
 
-
-
+@font-face {
+    font-family: 'San Francisco Pro Display Regular';
+    src: url('../font/SFProDisplay-Regular.eot');
+    src: url('../font/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../font/SFProDisplay-Regular.woff') format('woff'),
+    url('../font/SFProDisplay-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+@font-face {
+    font-family: 'San Francisco Pro Display Medium';
+    src: url('../font/SFProDisplay-Medium.eot');
+    src: url('../font/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),
+    url('../font/SFProDisplay-Medium.woff') format('woff'),
+    url('../font/SFProDisplay-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .link-button{
+  /* font-family: 'San Francisco Pro Display Medium'; */
+  font-family: 'San Francisco Pro Display Regular';
   display: block;
   position: absolute; 
   background-color: #E6E3DF;
@@ -377,9 +395,11 @@ h1.show{
   border-radius: 70px;
   padding: 15px 40px;
   text-decoration: none;
-  font-weight: 700;
+    font-weight: normal;
+    font-style: normal;
   transition: all ease 0.3s;
   box-sizing: border-box;
+  outline: none;
 }
 
 .link-button.top-button{
@@ -387,6 +407,22 @@ h1.show{
   margin-left: 128px;
   bottom: 20%;
 }
+
+button.link-button{
+  outline: none;
+  border: none;
+}
+
+
+.link-button.form-btn{
+    margin-top: 60px;
+    position: relative;
+    font-size: 20px;
+    padding: 21px 71px;
+    cursor:pointer;
+
+}
+
 
 .link-button.bottom-button{
   right: 0%;
@@ -2514,6 +2550,15 @@ input.error {
   .main-screen{
     background-image: url(../img/main-bg-mob.webp);
   }
+
+  .link-button.form-btn{
+    margin-top: 50px;
+    position: relative;
+    font-size: 16px;
+    padding: 15px 30px;
+    cursor:pointer;
+
+}
   .link-button.bottom-button{
     padding: 10px 15px;
     font-size: 12px;
@@ -2528,13 +2573,13 @@ input.error {
     left: 0%;
     margin-left: 28px;
     bottom: 49px;
-    padding: 10px 20px;
-    font-size: 12px;
+    padding: 10px 25px;
+    font-size: 16px;
     left: 65px;
     margin: 0;
     transform: rotate(-90deg);
     transform-origin: left;
-    margin-lrft: 20px;
+    /* margin-left: 20px; */
     margin-top: 13px;
   }
   .h1 {
