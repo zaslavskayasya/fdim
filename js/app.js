@@ -71,23 +71,28 @@ document.querySelectorAll('input').forEach(input => {
 
 menuLinks.forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // Запобігаємо стандартній поведінці посилання
-
+    
     // Отримуємо ID секції, до якої потрібно скролити
-    let targetId = this.getAttribute('href').substring(1);
-    let targetSection = document.getElementById(targetId);
-
+    let targetId = this.getAttribute('href');
+    let targetSection = document.getElementById(targetId.slice(1));
+    // console.log(targetId.slice(1));
     // Закриваємо бокове меню
     sidenav.classList.remove('open');
     layout.classList.remove('active');
     body.style.overflow = '';
     document.documentElement.style.overflow = '';
+    
+    if (targetId[0] == "#"){
+      e.preventDefault(); // Запобігаємо стандартній поведінці посилання
+      console.log(targetId)
+      targetSection.scrollIntoView({
+        behavior: 'smooth', // Плавний скрол
+        block: 'start'
+      });
+    }
+
 
     // Скролимо до відповідної секції
-    targetSection.scrollIntoView({
-      behavior: 'smooth', // Плавний скрол
-      block: 'start'
-    });
   });
 });
 
