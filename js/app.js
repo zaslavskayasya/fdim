@@ -84,7 +84,7 @@ menuLinks.forEach(link => {
     
     if (targetId[0] == "#"){
       e.preventDefault(); // Запобігаємо стандартній поведінці посилання
-      console.log(targetId)
+      // console.log(targetId)
       targetSection.scrollIntoView({
         behavior: 'smooth', // Плавний скрол
         block: 'start'
